@@ -7,6 +7,8 @@ public class usuario {
     private String correo;
     private String profesion;
     private int    edad;
+    
+    //prueba de un comentario alterado
 
     // >> Constructor de la clase "usuario":
     public usuario(String nombreUsuarioInput, String contraseñaInput, String apellidoInput, String correoInput, String profesionInput, int edadInput){
