@@ -82,13 +82,6 @@ public class WorkHub {
             }else if(op == 2){
                 //registrarse.
                 System.out.println("\n-------------- REGISTRO ---------------\n");
-                /*private static int usuarios_totales = 0;
-                private String nombre;
-                private String contraseña;
-                private String apellido;
-                private String correo;
-                private String profesion;
-                private int    edad;*/
                 System.out.print("\n Ingrese su nombre --> ");
                 String n = scan.next();
                 System.out.println();
@@ -124,9 +117,21 @@ public class WorkHub {
                 String prof = scan.next();
                 System.out.println();
 
-                System.out.print("\n Ingrese su edad -->");
-                int edad = scan.nextInt();
-                System.out.println();
+                int edad = 0;
+                boolean nu = false;
+                while(nu==false){
+                    try{
+                        System.out.print("\n Ingrese su edad -->");
+                        edad = scan.nextInt();
+                        System.out.println();
+                        nu = true;
+                    }catch(Exception e){
+                        System.out.println("\n\t ! Ingrese valores numericos ! ");
+                        scan.nextLine();
+                    }
+                    
+                }
+                
 
                 usuario = new usuario(n, c, apellido, correo, prof, edad);
             }
