@@ -1,5 +1,6 @@
 public class usuario {
 
+    //Atributos de la clase usuario.
     private static int usuarios_totales = 0;
     private String nombre;
     private String contraseña;
@@ -7,10 +8,6 @@ public class usuario {
     private String correo;
     private String profesion;
     private int    edad;
-
-    public usuario(){
-        
-    }
 
     // >> Constructor de la clase "usuario":
     public usuario(String nombreUsuarioInput, String contraseñaInput, String apellidoInput, String correoInput, String profesionInput, int edadInput){
