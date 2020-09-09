@@ -12,7 +12,7 @@ public class almacen {
 
     public boolean iniciar_sesion(String nombre, String contraseña){
 
-
+        System.out.println("djfjdkfj");
         return respuesta;
     }
 
