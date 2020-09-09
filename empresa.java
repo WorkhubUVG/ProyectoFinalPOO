@@ -6,9 +6,12 @@ public class empresa {
     private String correoElectronico;
     private String numTelefono;
     
-    //Setter
-    public void setNombreEmpresa(String inNombreEmpresa) {
-        this.nombreEmpresa = inNombreEmpresa;
+    //Builder de empresa
+    public empresa(String inNombreEmpresa,String inDescripcion,String inCorreoElectronico, String inNumTelefono) {
+        this.descripcionEmpresa = inDescripcion;
+        this.nombreEmpresa      = inNombreEmpresa;
+        this.correoElectronico  = inCorreoElectronico;
+        this.numTelefono        = inNumTelefono;
     }
 
     // Getter del metodo anterior
@@ -16,28 +19,14 @@ public class empresa {
         return this.nombreEmpresa;
     }
 
-    // Setter de la descripcion de la empresa
-    public void setDescripcionEmpresa(String inDescripcion) {
-        this.descripcionEmpresa = inDescripcion;
-    }
-
     //getter del metodo anterior
     public String getDescripcionEmpresa(){
         return this.descripcionEmpresa;
     }
 
-    //Setter del correo de la empresa
-    public void setCorreoEmpresa(String inCorreoElectronico){
-        this.correoElectronico = inCorreoElectronico;
-    }
     //Getter del método anterior
     public String getCorreoEmpresa(){
         return this.correoElectronico;
-    }
-
-    //Setter del correos 
-    public void setNumTelefono(String inNumTelefono){
-        this.numTelefono = inNumTelefono;
     }
     //getter del método anterior
     public String getNumTelefono(){
