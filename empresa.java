@@ -5,6 +5,7 @@ public class empresa {
     private String descripcionEmpresa;
     private String correoElectronico;
     private String numeroTelefono;
+    // Nuevos cambios agregados
     
        
 }
