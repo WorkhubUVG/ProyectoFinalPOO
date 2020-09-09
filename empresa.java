@@ -1,5 +1,6 @@
 public class empresa {
-    private String empresa;
-    //Mombi
+    private String nombreEmpresa;
+    private String descripcionEmpresa;
+    
        
 }
