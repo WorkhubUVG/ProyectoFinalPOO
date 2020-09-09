@@ -39,6 +39,7 @@ public class WorkHub {
                 try{
                     System.out.print("\n Opcion --> ");
                     op = scan.nextInt();
+                    System.out.println();
                     if(op<1 || op>2){
                         System.out.println("\n\t ! Ingrese valores entre 1 y 2 !\n");
                     }else{
@@ -55,25 +56,16 @@ public class WorkHub {
             if(op == 1){
                 //iniciar sesion.
                 System.out.println("\n----------- INICIO DE SESION ------------\n");
-                boolean sesion = false;
-                while(sesion == false){
-                    System.out.print("\n Ingrese su nombre --> ");
-                    nombre = scan.next();
-                    System.out.println();
-                    System.out.print("\n Ingrese la contraseña --> ");
-                    contra = scan.next();
-                    System.out.println();
-                    System.out.print("\n Vuelva a ingresar la contraseña --> ");
-                    conContra = scan.next();
-                    System.out.println();
+                System.out.print("\n Ingrese su nombre --> ");
+                nombre = scan.next();
+                System.out.println();
+                System.out.print("\n Ingrese la contraseña --> ");
+                contra = scan.next();
+                System.out.println();
 
-                    if(contra.equals(conContra)){
-                        sesion = true;
-                    }else{
-                        System.out.println("\n\t ! Esa contraseña no existe !");
-                    }
-                }
                 almacen.iniciar_sesion(nombre, contra);
+
+                clear();
                 
             }else if(op == 2){
                 //registrarse.
