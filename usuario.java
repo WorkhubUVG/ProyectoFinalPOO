@@ -8,6 +8,10 @@ public class usuario {
     private String profesion;
     private int    edad;
 
+    public usuario(){
+        
+    }
+
     // >> Constructor de la clase "usuario":
     public usuario(String nombreUsuarioInput, String contraseñaInput, String apellidoInput, String correoInput, String profesionInput, int edadInput){
 
