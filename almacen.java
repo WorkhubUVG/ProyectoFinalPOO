@@ -9,9 +9,12 @@ public class almacen {
         empresario = new ArrayList();
     }
 
-    public boolean iniciar_sesion(String nombre, String contraseña){
-
-        
+    public boolean iniciar_sesion(String nombre, String contraseña){ //prueba pushea
+        if(nombre == contraseña) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
