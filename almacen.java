@@ -11,7 +11,9 @@ public class almacen {
 
     public boolean iniciar_sesion(String nombre, String contraseña){
 
-        
+        boolean x = false;
+        return x;
+
     }
 
 
