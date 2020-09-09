@@ -8,6 +8,14 @@ public class WorkHub {
         System.out.print("\033[H\033[2J");  
         System.out.flush();
     }
+
+    public static void sesionIniciada(String x){
+        if(x.equals("usuario")){
+            System.out.println("usuario");
+        }else if(x.equals("empresa")){
+            System.out.println("empresa");
+        }
+    }
     public static void main(String []args){ // creando el meotodo main para interactuar con el usuario
 
         //instanciando las clases
@@ -63,14 +71,66 @@ public class WorkHub {
                 contra = scan.next();
                 System.out.println();
 
-                almacen.iniciar_sesion(nombre, contra);
+                boolean existe = almacen.iniciar_sesion(nombre, contra);
+                if(existe == true){
+                    sesionIniciada("usuario");
+                }else{
+                    System.out.println("\n Datos incorrectos! \n");
+                }
 
-                clear();
                 
             }else if(op == 2){
                 //registrarse.
+                System.out.println("\n-------------- REGISTRO ---------------\n");
+                /*private static int usuarios_totales = 0;
+                private String nombre;
+                private String contraseña;
+                private String apellido;
+                private String correo;
+                private String profesion;
+                private int    edad;*/
+                System.out.print("\n Ingrese su nombre --> ");
+                String n = scan.next();
+                System.out.println();
 
+                System.out.print("\n Ingrese su contraseña --> ");
+                String c = scan.next();
+                System.out.println();
+
+                boolean con = false;
+                while(con == false){
+
+                    System.out.print("\n Repita su contraseña --> ");
+                    String segundoc = scan.next();
+                    System.out.println();
+
+                    if(segundoc.equals(c)){
+                        con = true;
+                    }else{
+                        System.out.println("\n\t ! Contraseña incorrecta, vuelva a intentar !");
+                    }
+
+                }
+
+                System.out.print("\n Ingrese su apellido --> ");
+                String apellido = scan.next();
+                System.out.println();
+
+                System.out.print("\n Ingrese su correo --> ");
+                String correo = scan.next();
+                System.out.println();
+
+                System.out.print("\n Ingrese su carrera --> ");
+                String prof = scan.next();
+                System.out.println();
+
+                System.out.print("\n Ingrese su edad -->");
+                int edad = scan.nextInt();
+                System.out.println();
+
+                usuario = new usuario(n, c, apellido, correo, prof, edad);
             }
+            //quitar despues
             salir = true;
             
             
