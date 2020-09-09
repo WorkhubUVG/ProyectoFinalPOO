@@ -1,10 +1,14 @@
-import java.util.ArrayList;
-public class almacen {
+//importando la clase ArrayList
+import java.util.ArrayList; 
+public class almacen { //creando la clase almacen
 
+    //creando variables
     private ArrayList<usuario> usuario;
     private ArrayList<empresa> empresa;
 
-    public almacen(){
+    public almacen(){ //creando el constructor
+
+        //definiendo variables
         usuario = new ArrayList();
         empresa = new ArrayList();
     }
