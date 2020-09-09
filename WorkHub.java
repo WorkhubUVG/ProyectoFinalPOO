@@ -82,7 +82,8 @@ public class WorkHub {
             }else if(op == 2){
                 //registrarse.
                 System.out.println("\n-------------- REGISTRO ---------------\n");
-                /*private static int usuarios_totales = 0;
+                /*
+                private static int usuarios_totales = 0;
                 private String nombre;
                 private String contraseña;
                 private String apellido;
