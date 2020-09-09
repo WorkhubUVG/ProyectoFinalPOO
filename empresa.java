@@ -3,6 +3,9 @@ public class empresa {
     //Atributos de la clase empresa.
     private String nombreEmpresa;
     private String descripcionEmpresa;
-    private String correo; 
+    private String correoElectronico;
+    private String numeroTelefono;
+    // Nuevos cambios agregados
+    
        
 }
