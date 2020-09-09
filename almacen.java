@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class almacen {
 
     private ArrayList<usuario> empresa;
