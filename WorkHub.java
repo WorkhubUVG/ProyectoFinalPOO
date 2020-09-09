@@ -52,7 +52,33 @@ public class WorkHub {
             }
             clear();
 
-            
+            if(op == 1){
+                //iniciar sesion.
+                System.out.println("\n----------- INICIO DE SESION ------------\n");
+                boolean sesion = false;
+                while(sesion == false){
+                    System.out.print("\n Ingrese su nombre --> ");
+                    nombre = scan.next();
+                    System.out.println();
+                    System.out.print("\n Ingrese la contraseña --> ");
+                    contra = scan.next();
+                    System.out.println();
+                    System.out.print("\n Vuelva a ingresar la contraseña --> ");
+                    conContra = scan.next();
+                    System.out.println();
+
+                    if(contra.equals(conContra)){
+                        sesion = true;
+                    }else{
+                        System.out.println("\n\t ! Esa contraseña no existe !");
+                    }
+                }
+                almacen.iniciar_sesion(nombre, contra);
+                
+            }else if(op == 2){
+                //registrarse.
+
+            }
             salir = true;
             
             
