@@ -134,6 +134,7 @@ public class WorkHub {
                 
 
                 usuario = new usuario(n, c, apellido, correo, prof, edad);
+                almacen.registrar_usuario(usuario);
             }
             //quitar despues
             salir = true;
