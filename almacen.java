@@ -13,11 +13,10 @@ public class almacen { //creando la clase almacen
         empresa = new ArrayList();
     }
 
-    public boolean registrar_usuario(usuario nombre, usuario contraseña) {
+    public boolean registrar_usuario(usuario x) {
 
         //agregando la informacion del usuario a la lista de usuario
-        usuario.add(nombre);
-        usuario.add(contraseña);
+        usuario.add(x);
 
         return true;
     }
