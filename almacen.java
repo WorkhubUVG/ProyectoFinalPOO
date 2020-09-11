@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class almacen { //creando la clase almacen
 
     //creando variables
-    private ArrayList<usuario> usuario;
+    private  ArrayList<usuario> usuario;
     private ArrayList<empresa> empresa;
 
     public almacen(){ //creando el constructor

@@ -25,6 +25,9 @@ public class usuario {
         
         
     }    
+    public String getProfesion(){
+        return this.profesion;
+    }
     public String getCorreo(){
         return this.correo;
     }
@@ -34,7 +37,6 @@ public class usuario {
     public int getedad(){
         return this.edad;
     }
-
     public String getNombre(){
         return nombre;
     }

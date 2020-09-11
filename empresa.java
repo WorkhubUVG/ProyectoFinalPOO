@@ -8,12 +8,12 @@ public class empresa {
     private int numTelefono;
     
     //Builder de empresa
-    public empresa(String inNombreEmpresa,String intContraseña, String inDescripcion,String inCorreoElectronico, int inNumTelefono) {
+    public empresa(String inNombreEmpresa,String Contraseña, String inDescripcion,String inCorreoElectronico, int inNumTelefono) {
         this.descripcionEmpresa = inDescripcion;
         this.nombreEmpresa      = inNombreEmpresa;
         this.correoElectronico  = inCorreoElectronico;
         this.numTelefono        = inNumTelefono;
-        this.contraseña         = intContraseña;
+        this.contraseña         = Contraseña;
     }
 
     // Getter del metodo anterior

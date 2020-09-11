@@ -12,6 +12,7 @@ public class WorkHub {
 
             // Se empieza el proceso de busqueda de empresas:
             ArrayList<empresa> lista_empresas = datos.getArregloEmpresa();
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBuenas tardes, aqui se presenta la lista de empresas que lo estan buscando:\n");
             for(int i = 0; i < lista_empresas.size(); i++){
                 System.out.println("-------------------------------------------------------------------");
                 System.out.println("Nombre de la empresa: " + lista_empresas.get(i).getNombreEmpresa()); 
@@ -25,15 +26,60 @@ public class WorkHub {
         
             // Se comienza el proceso de busqueda de usuarios:
             ArrayList<usuario> lista_usuarios = datos.getArregloUsuarios();
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBuenas tardes, aqui se presenta la lista de usuarios que estan disponibles a ser contratados:\n");
             for(int i = 0; i < lista_usuarios.size(); i++){
 
                 System.out.println("-------------------------------------------------------------------");
-                System.out.println("Nombre del usuario: " + lista_usuarios.get(i).getNombre());
+                System.out.println("Nombre del usuario: " + lista_usuarios.get(i).getNombre() + " " + lista_usuarios.get(i).getApellido());
+                System.out.println("Se dedica a: " + lista_usuarios.get(i).getProfesion());
+                System.out.println("Tiene una edad de: " + lista_usuarios.get(i).getedad());
+                System.out.println("Su contacto puede ser accedido por medio de: " + lista_usuarios.get(i).getCorreo());
 
             }
 
         }
         return salir;
+    }
+    private static void crearInstancias(almacen p){
+
+        String[] nombres = new String[]{"Pablo","Alejandro","Juan","Estuardo","Jose"};
+        String[] claves = new String[]{"asdasd","asdasd","asdasd","asdasd","asdasd"};
+        String[] apellidos = new String[]{"Gonzales","Archila","Padilla","Hernandez","Davila"};
+        String[] correo = new String[]{"pa3@gmail.com","ar4@gmail.com","ju5@gmail.com","pa3@gmail.com","soynuevo@uvg.edu.gt"};
+        int[]    edades = new int[]{20,31,30,22,43};
+        String[] profesion = new String[]{"Ingeniero en sistemas","Ingeniero en sistemas","Abogado","Ingeniero Civil","Ingeniero Industrial"};
+
+        for(int i = 0; i < nombres.length; i++){
+
+            usuario comodin = new usuario(nombres[i], claves[i], apellidos[i], correo[i], profesion[i], edades[i]);
+            p.registrar_usuario(comodin);
+        }
+
+
+        ArrayList<String> nombreEmpresa = new ArrayList<>();
+        nombreEmpresa.add("McDonalds");
+        nombreEmpresa.add("Berguer King");
+        nombreEmpresa.add("Kentucky free chicken");
+        nombreEmpresa.add("Faceook");
+        nombreEmpresa.add("Amazonias Inc S.A.");
+        String[] Descripciones = new String[]{"No somos veganos, las mejores hambargasas de la city!","El de arriba es puto, compren aqui mejor","Quien quiere hambargasas cuando hay pollo","Mejor que Instagram","Soy mejor que walmart, manda tu paqueton de forma segura!"};
+        String[] Correos = new String[]{"mcrules@mc.com","theoneabovesucks@burgerrules.com","Alabama sucks","We spy on you","We spy on you as well"};
+        String[] clavesempresas = new String[]{"123e","123e","123e","123e","123e"};
+        int[] telefonosempresa = new int[]{12123434,12121232,34234324,6546456,456456};
+
+        for(int i = 0; i < nombreEmpresa.size(); i++){
+            empresa comodin = new empresa(nombreEmpresa.get(i), clavesempresas[i], Descripciones[i],Correos[i], telefonosempresa[i]);
+            p.registrar_empresa(comodin);
+        }
+
+
+
+
+
+
+
+        
+
     }
     public static void main(String []args){ // creando el meotodo main para interactuar con el usuario
 
@@ -42,6 +88,7 @@ public class WorkHub {
         usuario usuario;
         empresa empresa;
         almacen almacen = new almacen();
+        crearInstancias(almacen);
  
         //empezando la simulacion
         System.out.println("--------------Bienvenido a WorkHub------------------");
