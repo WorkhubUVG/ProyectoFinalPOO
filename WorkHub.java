@@ -127,9 +127,12 @@ public class WorkHub {
                     String apellido = scan.next();
                     System.out.println();
     
+                    
                     System.out.print("\n Ingrese su correo --> ");
                     String correo = scan.next();
                     System.out.println();
+                    
+                    
     
                     System.out.print("\n Ingrese su carrera --> ");
                     String prof = scan.next();
