@@ -87,7 +87,7 @@ public class WorkHub {
                     contra = scan.next();
                     System.out.println();
     
-                    boolean existe = almacen.iniciar_sesion(nombre, contra);
+                    boolean existe = almacen.iniciar_sesion_u(nombre, contra);
                     if(existe == true){
                         sesionIniciada("usuario");
                     }else{
@@ -164,7 +164,7 @@ public class WorkHub {
                         contra = scan.next();
                         System.out.println();
 
-                        boolean existe = almacen.iniciar_sesion(nombre, contra);
+                        boolean existe = almacen.iniciar_sesion_e(nombre, contra);
                         if(existe == true){
                             sesionIniciada("empresa");
                         }else{
