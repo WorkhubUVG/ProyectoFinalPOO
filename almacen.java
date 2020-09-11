@@ -63,7 +63,7 @@ public class almacen { //creando la clase almacen
         return this.usuario;
 
     }
-    ArrayList<empresa> getArregloEmpresa(){
+    public ArrayList<empresa> getArregloEmpresa(){
 
         return this.empresa;
 
