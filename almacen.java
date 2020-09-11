@@ -58,6 +58,17 @@ public class almacen { //creando la clase almacen
         return respuesta;
         
     } 
+    public ArrayList<usuario> getArregloUsuarios(){
+
+        return this.usuario;
+
+    }
+    ArrayList<empresa> getArregloEmpresa(){
+
+        return this.empresa;
+
+    }
+
     
     
 

@@ -1,16 +1,37 @@
 //importando la clase Scnanner
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class WorkHub { 
 
 
-    public static boolean sesionIniciada(String x){
-        boolean salir = false;
+    public static boolean sesionIniciada(String x , almacen datos){
+        boolean salir = true;
         if(x.equals("usuario")){
-            System.out.println("usuario");
+
+            // Se empieza el proceso de busqueda de empresas:
+            ArrayList<empresa> lista_empresas = datos.getArregloEmpresa();
+            for(int i = 0; i < lista_empresas.size(); i++){
+                System.out.println("-------------------------------------------------------------------");
+                System.out.println("Nombre de la empresa: " + lista_empresas.get(i).getNombreEmpresa()); 
+                System.out.println("La empresa mayormente se dedica a:\n" + lista_empresas.get(i).getDescripcionEmpresa());
+                System.out.println("Para ponerse en contacto con la empresa puede escribir a: " + lista_empresas.get(i).getCorreoEmpresa());
+                System.out.println("O puede llamar al numero de telefono: " + lista_empresas.get(i).getNumTelefono());
+                System.out.println("-------------------------------------------------------------------");
+            }
+
         }else if(x.equals("empresa")){
-            System.out.println("empresa");
+        
+            // Se comienza el proceso de busqueda de usuarios:
+            ArrayList<usuario> lista_usuarios = datos.getArregloUsuarios();
+            for(float i = 0; i < (float) lista_usuarios.size(); i++){
+
+                System.out.println("-------------------------------------------------------------------");
+                System.out.println("Nombre del usuario: " + "");
+
+            }
+
         }
         return salir;
     }
@@ -91,7 +112,7 @@ public class WorkHub {
     
                     boolean existe = almacen.iniciar_sesion_u(nombre, contra);
                     if(existe == true){
-                        salir = sesionIniciada("usuario");
+                        salir = sesionIniciada("usuario",almacen);
                     }else{
                         System.out.println("\n Datos incorrectos! \n");
                     }
@@ -168,7 +189,7 @@ public class WorkHub {
 
                         boolean existe = almacen.iniciar_sesion_e(nombre, contra);
                         if(existe == true){
-                            salir = sesionIniciada("empresa");
+                            salir = sesionIniciada("empresa",almacen);
                         }else{
                             System.out.println("\n Datos incorrectos! \n");
                         }
