@@ -25,21 +25,28 @@ public class usuario {
         
         
     }    
+
+    // Getter de profesion usuario:
     public String getProfesion(){
         return this.profesion;
     }
+    // Getter de corre de usuario:
     public String getCorreo(){
         return this.correo;
     }
+    // getter de apellido de usaurio
     public String getApellido(){
         return this.apellido;
     }
+    // getter de edad del usuario
     public int getedad(){
         return this.edad;
     }
+    // getter de nombre de usuario
     public String getNombre(){
         return nombre;
     }
+    // getter de clave de usuario
     public String getContraseña(){
         return contraseña;
     }

@@ -58,6 +58,9 @@ public class almacen { //creando la clase almacen
         return respuesta;
         
     } 
+
+    // Getters de tanto el arreglo de usaurios como el arreglo de la empresa para la clase de Workhub:
+    
     public ArrayList<usuario> getArregloUsuarios(){
 
         return this.usuario;

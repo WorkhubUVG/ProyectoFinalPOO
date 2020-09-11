@@ -40,9 +40,12 @@ public class WorkHub {
         }
         return salir;
     }
-    //Método para crear instancias
     private static void crearInstancias(almacen p){
 
+
+
+        // Se generan datos fantasmas para poder presentar informacion tanto en la sesion iniciada del usuario como el de la empresa.
+        // Por medio de Arrays
         String[] nombres = new String[]{"Pablo","Alejandro","Juan","Estuardo","Jose"};
         String[] claves = new String[]{"asdasd","asdasd","asdasd","asdasd","asdasd"};
         String[] apellidos = new String[]{"Gonzales","Archila","Padilla","Hernandez","Davila"};
@@ -50,24 +53,27 @@ public class WorkHub {
         int[]    edades = new int[]{20,31,30,22,43};
         String[] profesion = new String[]{"Ingeniero en sistemas","Ingeniero en sistemas","Abogado","Ingeniero Civil","Ingeniero Industrial"};
 
+        // Se asignan las variables por el for loop:
         for(int i = 0; i < nombres.length; i++){
 
             usuario comodin = new usuario(nombres[i], claves[i], apellidos[i], correo[i], profesion[i], edades[i]);
             p.registrar_usuario(comodin);
         }
 
-
+        // Se generan datos fantasmas para poder presentar informacion tanto en la sesion iniciada del usuario como el de la empresa.
+        // Por medio de Arrays
         ArrayList<String> nombreEmpresa = new ArrayList<>();
         nombreEmpresa.add("McDonalds");
         nombreEmpresa.add("Berguer King");
         nombreEmpresa.add("Kentucky free chicken");
         nombreEmpresa.add("Faceook");
         nombreEmpresa.add("Amazonias Inc S.A.");
-        String[] Descripciones = new String[]{"No somos veganos, las mejores hambargasas de la city!","El de arriba es puto, compren aqui mejor","Quien quiere hambargasas cuando hay pollo","Mejor que Instagram","Soy mejor que walmart, manda tu paqueton de forma segura!"};
-        String[] Correos = new String[]{"mcrules@mc.com","theoneabovesucks@burgerrules.com","Alabama sucks","We spy on you","We spy on you as well"};
+        String[] Descripciones = new String[]{"No somos veganos, las mejores hambargasas de la city!","El de arriba es malo, compren aqui mejor","Quien quiere hambargasas cuando hay pollo","Mejor que Instagram","Soy mejor que walmart, manda tu paquete de forma segura!"};
+        String[] Correos = new String[]{"mcrules@mc.com","theoneabovesucks@burgerrules.com","Alabama@sucks","Wespyon@you","Wespyonyou@aswell"};
         String[] clavesempresas = new String[]{"123e","123e","123e","123e","123e"};
         int[] telefonosempresa = new int[]{12123434,12121232,34234324,6546456,456456};
 
+        // Se asignan las variables por el for loop
         for(int i = 0; i < nombreEmpresa.size(); i++){
             empresa comodin = new empresa(nombreEmpresa.get(i), clavesempresas[i], Descripciones[i],Correos[i], telefonosempresa[i]);
             p.registrar_empresa(comodin);
@@ -110,6 +116,8 @@ public class WorkHub {
 
             boolean opcion = false;
 
+
+            // Metodo de verificacion para ingresar datos validos
             while(opcion == false){
                 try{
                     System.out.print("\n Opcion --> ");
@@ -131,6 +139,7 @@ public class WorkHub {
             opcion = false;
             System.out.println("\n [1] Usuario. ");
             System.out.println("\n [2] Empresa. ");
+            // Metodo de verificacion para ingresar datos validos
             while(opcion == false){
                 try{
                     System.out.print("\n Opcion --> ");
@@ -158,6 +167,7 @@ public class WorkHub {
                     contra = scan.next();
                     System.out.println();
     
+                    // Metodo de verificacion para ver si los datos que ha ingresado el usuario son correctos
                     boolean existe = almacen.iniciar_sesion_u(nombre, contra);
                     if(existe == true){
                         salir = sesionIniciada("usuario",almacen);
@@ -179,11 +189,11 @@ public class WorkHub {
     
                     boolean con = false;
                     while(con == false){
-    
+                    // Metodo de verificacion para ingresar datos validos
                         System.out.print("\n Repita su contraseña --> ");
                         String segundoc = scan.next();
                         System.out.println();
-    
+                        // Metodo de verificacion de la clave sea correcta:
                         if(segundoc.equals(c)){
                             con = true;
                         }else{
@@ -192,23 +202,25 @@ public class WorkHub {
     
                     }
     
+                    // Ingreso de datos del usaurio:
                     System.out.print("\n Ingrese su apellido --> ");
                     String apellido = scan.next();
                     System.out.println();
     
-                    
+                    // Ingreso de datos del usaurio:
                     System.out.print("\n Ingrese su correo --> ");
                     String correo = scan.next();
                     System.out.println();
                     
                     
-    
+                    // Ingreso de datos del usaurio:
                     System.out.print("\n Ingrese su carrera --> ");
                     String prof = scan.next();
                     System.out.println();
     
                     int edad = 0;
                     boolean nu = false;
+                    // Metodo de verificacion para ingresar datos validos
                     while(nu==false){
                         try{
                             System.out.print("\n Ingrese su edad -->");
@@ -223,7 +235,9 @@ public class WorkHub {
                     }
                     
                     System.out.println("\n\n\n");
+                    // Se crea la instancia de un nuevo usuario:
                     usuario = new usuario(n, c, apellido, correo, prof, edad);
+                    // Se agrega el usuario al almacen:
                     almacen.registrar_usuario(usuario);
                 }
 
@@ -231,6 +245,7 @@ public class WorkHub {
 
                     if(op == 1){
                         System.out.println("\n----------- INICIO DE SESION ------------\n");
+                        // Requerimiento de datos para la empresa
                         System.out.print("\n Ingrese el nombre de la empresa --> ");
                         nombre = scan.next();
                         System.out.println();
@@ -239,6 +254,7 @@ public class WorkHub {
                         System.out.println();
 
                         boolean existe = almacen.iniciar_sesion_e(nombre, contra);
+                        // Verificar que los datos sean correctos
                         if(existe == true){
                             salir = sesionIniciada("empresa",almacen);
                         }else{
@@ -246,17 +262,19 @@ public class WorkHub {
                         }
 
                     }else if(op == 2){
-                        //registrarse.
+
+                        //registrarse como empresa
                         System.out.println("\n-------------- REGISTRO ---------------\n");
                         System.out.print("\n Ingrese el nombre de la empresa --> ");
                         String n_empresa = scan.next();
                         System.out.println();
-    
+                        //registrarse con las claves de las personas:
                         System.out.print("\n Ingrese su contraseña --> ");
                         String c = scan.next();
                         System.out.println();
     
                         boolean con = false;
+                        // Verificar por del while que los datos ingresados sean correctos:
                         while(con == false){
     
                             System.out.print("\n Repita su contraseña --> ");
@@ -271,16 +289,18 @@ public class WorkHub {
     
                         }
     
+                        // Ingresar los datos especificos de la empresa:
                         System.out.print("\n Ingrese la descripcion de la empresa --> ");
                         String descripcion = scan.next();
                         System.out.println();
-    
+                        // Ingresar los datos especificos de la empresa:
                         System.out.print("\n Ingrese su correo --> ");
                         String correo = scan.next();
                         System.out.println();
     
                         int telefono = 0;
                         boolean nu = false;
+                        // Verificar por del while que los datos ingresados sean correctos:
                         while(nu==false){
                             try{
                                 System.out.print("\n Ingrese el telefono -->");
@@ -295,7 +315,9 @@ public class WorkHub {
                         }
                         
                         System.out.println("\n\n\n");
+                        // Instanciar nueva instancia de empresa con las propiedades ingresadas:
                         empresa = new empresa(n_empresa, c, descripcion, correo, telefono);
+                        // Almacenar la instancia en la clase de empresa
                         almacen.registrar_empresa(empresa);
                     }
                 }
@@ -309,5 +331,8 @@ public class WorkHub {
             
             //quitar despues
             salir = true;
+            
+            
+            
         }
     } 
