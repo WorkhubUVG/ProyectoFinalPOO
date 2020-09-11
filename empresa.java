@@ -2,16 +2,18 @@ public class empresa {
     
     //Atributos de la clase empresa.
     private String nombreEmpresa;
+    private String contraseña;
     private String descripcionEmpresa;
     private String correoElectronico;
-    private String numTelefono;
+    private int numTelefono;
     
     //Builder de empresa
-    public empresa(String inNombreEmpresa,String inDescripcion,String inCorreoElectronico, String inNumTelefono) {
+    public empresa(String inNombreEmpresa,String intContraseña, String inDescripcion,String inCorreoElectronico, int inNumTelefono) {
         this.descripcionEmpresa = inDescripcion;
         this.nombreEmpresa      = inNombreEmpresa;
         this.correoElectronico  = inCorreoElectronico;
         this.numTelefono        = inNumTelefono;
+        this.contraseña         = intContraseña;
     }
 
     // Getter del metodo anterior
@@ -29,8 +31,11 @@ public class empresa {
         return this.correoElectronico;
     }
     //getter del método anterior
-    public String getNumTelefono(){
+    public int getNumTelefono(){
         return this.numTelefono;
+    }
+    public String getContraseña(){
+        return this.contraseña;
     }
 
 

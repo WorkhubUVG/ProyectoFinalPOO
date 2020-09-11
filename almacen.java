@@ -22,11 +22,10 @@ public class almacen { //creando la clase almacen
     }
 
     
-    public boolean registrar_empresa(empresa nombre, empresa contraseña) {
+    public boolean registrar_empresa(empresa x) {
 
         //agregando la informacion de la empresa a la lista de empresa
-        empresa.add(nombre);
-        empresa.add(contraseña);
+        empresa.add(x);
 
         return true;
     }
