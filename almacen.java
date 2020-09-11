@@ -30,14 +30,25 @@ public class almacen { //creando la clase almacen
         return true;
     }
 
-    public boolean iniciar_sesion(String nombre, String contraseña){ //meotod para ver si la informacion de iniciar sesion ya esta en las listas
+    public boolean iniciar_sesion_u(String nombre, String contraseña){ //meotod para ver si la informacion de iniciar sesion ya esta en las listas
 
         boolean respuesta = false;
         for(int i = 0; i<usuario.size();i++){
-            if(usuario.get(i).getNombre().equals(nombre) && usuario.get(i).equals(contraseña)) {
+            if((usuario.get(i).getNombre()).equals(nombre) && (usuario.get(i).getContraseña()).equals(contraseña)) {
                 respuesta = true;
                 break;
-            } else if(empresa.get(i).getNombreEmpresa().equals(nombre) && empresa.get(i).getContraseña().equals(contraseña)) {
+            }else {
+                respuesta = false;
+            }
+        }
+        return respuesta;
+        
+    }   
+    public boolean iniciar_sesion_e(String nombre, String contraseña){ //meotod para ver si la informacion de iniciar sesion ya esta en las listas
+
+        boolean respuesta = false;
+        for(int i = 0; i<empresa.size();i++){
+            if(empresa.get(i).getNombreEmpresa().equals(nombre) && empresa.get(i).getContraseña().equals(contraseña)) {
                 respuesta = true;
                 break;
             } else {
@@ -46,7 +57,9 @@ public class almacen { //creando la clase almacen
         }
         return respuesta;
         
-    }    
+    } 
+    
+    
 
 
 }
