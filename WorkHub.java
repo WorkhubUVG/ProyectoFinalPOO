@@ -15,7 +15,7 @@ public class WorkHub {
     public static void main(String []args){ // creando el meotodo main para interactuar con el usuario
 
         //instanciando las clases
-        Scanner scan = new Scanner(System.in); } 
+        Scanner scan = new Scanner(System.in);  
         usuario usuario;
         empresa empresa;
         almacen almacen = new almacen();
