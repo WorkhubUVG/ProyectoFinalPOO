@@ -32,13 +32,20 @@ public class almacen { //creando la clase almacen
 
     public boolean iniciar_sesion(String nombre, String contraseña){ //meotod para ver si la informacion de iniciar sesion ya esta en las listas
 
-        if(usuario.contains(nombre) && usuario.contains(contraseña)) {
-            return true;
-        } else if(empresa.contains(nombre) && empresa.contains(contraseña)) {
-            return true;
-        } else {
-            return false;
+        boolean respuesta = false;
+        for(int i = 0; i<usuario.size();i++){
+            if(usuario.get(i).getNombre().equals(nombre) && usuario.get(i).equals(contraseña)) {
+                respuesta = true;
+                break;
+            } else if(empresa.get(i).getNombreEmpresa().equals(nombre) && empresa.get(i).getContraseña().equals(contraseña)) {
+                respuesta = true;
+                break;
+            } else {
+                respuesta = false;
+            }
         }
+        return respuesta;
+        
     }    
 
 

@@ -148,7 +148,7 @@ public class WorkHub {
                         
                     }
                     
-    
+                    System.out.println("\n\n\n");
                     usuario = new usuario(n, c, apellido, correo, prof, edad);
                     almacen.registrar_usuario(usuario);
                 }
@@ -220,7 +220,7 @@ public class WorkHub {
                             
                         }
                         
-    
+                        System.out.println("\n\n\n");
                         empresa = new empresa(n_empresa, c, descripcion, correo, telefono);
                         almacen.registrar_empresa(empresa);
                     }
