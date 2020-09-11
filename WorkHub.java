@@ -40,6 +40,7 @@ public class WorkHub {
         }
         return salir;
     }
+    //Método para crear instancias
     private static void crearInstancias(almacen p){
 
         String[] nombres = new String[]{"Pablo","Alejandro","Juan","Estuardo","Jose"};
@@ -308,8 +309,5 @@ public class WorkHub {
             
             //quitar despues
             salir = true;
-            
-            
-            
         }
     } 
