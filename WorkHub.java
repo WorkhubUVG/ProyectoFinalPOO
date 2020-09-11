@@ -25,10 +25,10 @@ public class WorkHub {
         
             // Se comienza el proceso de busqueda de usuarios:
             ArrayList<usuario> lista_usuarios = datos.getArregloUsuarios();
-            for(float i = 0; i < (float) lista_usuarios.size(); i++){
+            for(int i = 0; i < lista_usuarios.size(); i++){
 
                 System.out.println("-------------------------------------------------------------------");
-                System.out.println("Nombre del usuario: " + "");
+                System.out.println("Nombre del usuario: " + lista_usuarios.get(i).getNombre());
 
             }
 
