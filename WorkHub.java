@@ -5,12 +5,14 @@ import java.util.Scanner;
 public class WorkHub { 
 
 
-    public static void sesionIniciada(String x){
+    public static boolean sesionIniciada(String x){
+        boolean salir = false;
         if(x.equals("usuario")){
             System.out.println("usuario");
         }else if(x.equals("empresa")){
             System.out.println("empresa");
         }
+        return salir;
     }
     public static void main(String []args){ // creando el meotodo main para interactuar con el usuario
 
@@ -89,7 +91,7 @@ public class WorkHub {
     
                     boolean existe = almacen.iniciar_sesion_u(nombre, contra);
                     if(existe == true){
-                        sesionIniciada("usuario");
+                        salir = sesionIniciada("usuario");
                     }else{
                         System.out.println("\n Datos incorrectos! \n");
                     }
@@ -166,7 +168,7 @@ public class WorkHub {
 
                         boolean existe = almacen.iniciar_sesion_e(nombre, contra);
                         if(existe == true){
-                            sesionIniciada("empresa");
+                            salir = sesionIniciada("empresa");
                         }else{
                             System.out.println("\n Datos incorrectos! \n");
                         }
