@@ -1,6 +1,8 @@
 public class Entidad{
     
+    public Entidad() { //creando constructor
 
+    }
 
 
 }
