@@ -1,8 +1,8 @@
 public class Entidad{
     
-    public Entidad() { //creando constructor
-
-    }
+    protected int    NoTelefono;
+    protected String CorreoElectronico;
+    protected String Nombre;
 
 
 }
