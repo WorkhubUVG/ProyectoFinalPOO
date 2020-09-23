@@ -1,5 +1,6 @@
 public class Entidad{
     
+    //controlador
     public Entidad() { //creando constructor
 
     }
