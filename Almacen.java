@@ -9,7 +9,6 @@ public class Almacen{
 
     private static ArrayList<String[]> listaEmpresas = new ArrayList<>();
     private static String[] empresaElegida;
-
     public static void revisarUsuarios(){
 
         try {
