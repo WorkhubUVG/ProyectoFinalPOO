@@ -47,9 +47,8 @@ class Controlador {
 
 
         }
-
-
     }
+
     private static void registroUsuario() {
 
 
