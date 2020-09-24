@@ -17,8 +17,11 @@ class Controlador {
 
 
 
-
-        if(usuarioExistente){ inicioDeSesion(false); }
+        boolean tipo = Interaccion.usuario_empresa();
+        if(usuarioExistente){  // >> Verifica si es usuario o empresa (true si es usuario, false si es empresa)
+            if(tipo == true){ inicioDeSesion(true); }
+             else{ inicioDeSesion(false);}
+        }
         else { registroUsuario(); }
 
     }
