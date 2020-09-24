@@ -4,11 +4,18 @@ import java.util.Scanner;
 
 public class Almacen{
 
+    // >> Se crean espacios de almacenamiento para guardar temporalmente los datos de Usuario.
     private static ArrayList<String[]> listaUsuarios = new ArrayList<>();
     private static String[] usuarioElegido;
 
+    // >> Se crean espacios de almacenamiento para guardar temporalmente los datos de Empresa.
     private static ArrayList<String[]> listaEmpresas = new ArrayList<>();
     private static String[] empresaElegida;
+
+<<<<<<< HEAD
+    // >> Este metodo se encarga de ver si existe el usuario en el archivo de CSV, en el caso de si, se agregaran los usuarios a la ArrayList
+=======
+>>>>>>> 511dba8828fe9819a0e056b3235c013cb2ca6efc
     public static void revisarUsuarios(){
 
         try {
@@ -24,6 +31,7 @@ public class Almacen{
             ;
         }
     }
+    // >> Este metodo se encarga de ver si existen las empresas en el archivo de CSV, en el caso de si, se agregaran las empresas a la ArrayList
     public static void revisarEmpresas(){
         try {
             File ArchivoEmpresas = new File("empresasExistentes.csv");
@@ -38,6 +46,8 @@ public class Almacen{
             ;
         }
     }
+
+    // >> Este metodo verifica sin los datos que se pasan desde el controlador son correctos, en el caso de ser asi, este metodo retornara true
     public static boolean verificarDatosUsuario(String nombre, String clave){
         boolean usuarioEncontrado = false;
         for(int posicion = 0; posicion < listaUsuarios.size(); posicion++){
@@ -48,6 +58,7 @@ public class Almacen{
         }
         return usuarioEncontrado;
     }
+    // >> Este metodo verifica sin los datos que se pasan desde el controlador son correctos, en el caso de ser asi, este metodo retornara true
     public static boolean verificarDatosEmpresa(String nombre, String clave){
         boolean empresaEncontrada = false;
         for(int posicion = 0; posicion < listaEmpresas.size(); posicion++){
@@ -59,9 +70,11 @@ public class Almacen{
         return empresaEncontrada;
     }
 
+    // Getter de la matriz de usuarioElegido
     public static String[] getUsuarioEncontrado(){
         return usuarioElegido;
     }
+    // Getter de la matriz de empresaElegida
     public static String[] getEmpresaEncontrada(){
         return empresaElegida;
     }
