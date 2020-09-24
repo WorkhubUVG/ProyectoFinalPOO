@@ -12,10 +12,8 @@ public class Almacen{
     private static ArrayList<String[]> listaEmpresas = new ArrayList<>();
     private static String[] empresaElegida;
 
-<<<<<<< HEAD
     // >> Este metodo se encarga de ver si existe el usuario en el archivo de CSV, en el caso de si, se agregaran los usuarios a la ArrayList
-=======
->>>>>>> 511dba8828fe9819a0e056b3235c013cb2ca6efc
+
     public static void revisarUsuarios(){
 
         try {
