@@ -19,10 +19,11 @@ class Controlador {
 
         boolean tipo = Interaccion.usuario_empresa();
         if(usuarioExistente){ 
+            // >> Verifica si la entidad es usuario o empresa (true si es usuario, false si es empresa):
             if(tipo == true){ inicioDeSesion(true); }
             else{ inicioDeSesion(false);}
         }
-        else { registroUsuario(); }
+        else { registroUsuario(); } 
 
     }
 
@@ -50,9 +51,8 @@ class Controlador {
 
 
         }
-
-
     }
+
     private static void registroUsuario() {
 
 
