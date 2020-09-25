@@ -51,7 +51,8 @@ class Controlador {
     }
     private static void SesionIniciada(Entidad tipoDeEntidad){
         if(tipoDeEntidad.getClass().getName().equals("Usuario")){
-            // Este sera el controlador para la sesion iniciada de tipo Usuario
+            // forzando a la instancia 
+            Usuario tipo = (Usuario)tipoDeEntidad;
         }
         else if(tipoDeEntidad.getClass().getName().equals("Empresa")){
             // Este sera el controlador para la sesion iniciada de tipo Empresa

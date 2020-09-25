@@ -35,18 +35,13 @@ public class Entidad{ //creando la clase madre entidad
         }
         else{ return false; }
     }
-
-
 }
-
-class Usuario extends Entidad { //creando la clase heredada de entidad, que sera para los usuarios
-
+// >> creando la clase heredada de entidad, que sera para los usuarios
+class Usuario extends Entidad { 
     public Usuario(String nombre, String correo){
         this.Nombre = nombre;
         this.CorreoElectronico = correo;
     }
-    
-
 }
 
 class Empresa extends Entidad { //creando la clase heredada de entidad, que sera para las empresas

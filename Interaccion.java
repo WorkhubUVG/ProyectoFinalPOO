@@ -42,22 +42,22 @@ public class Interaccion {
         //Si es usuario le pedirá el nombre de usuario
         if(esUsuario){
             System.out.print("\nIngrese su nombre de usuario: ");
-            Scanner sc = new Scanner(System.in);
-            return sc.nextLine();
+            //Scanner sc = new Scanner(System.in);
+            return inputUsuario.nextLine();
         }
         //Si es empresa le pedirá el nombre de empresa
         else{
             System.out.print("\nIngrese el nombre de empresa: ");
-            Scanner sc = new Scanner(System.in);
-            return sc.nextLine();
+            //Scanner sc = new Scanner(System.in);
+            return inputUsuario.nextLine();
         }
         //Dependiendo si es usuario y empresa, retornará el respectivo nombre. 
     }
     //Método para pedirle una clave al usuario. 
     public static String claveUsuario(){
         System.out.print("Ingrese su clave: ");
-        Scanner sc = new Scanner(System.in);
-        return sc.nextLine();
+        //Scanner sc = new Scanner(System.in);
+        return inputUsuario.nextLine();
     }
     //Método para comprobar si el la persona es un usuario o una empresa. 
     public static boolean usuario_empresa(){
@@ -71,6 +71,7 @@ public class Interaccion {
             try{
                 System.out.print("Opcion: ");
                 opcion = inputUsuario.nextInt();
+                inputUsuario.nextLine();
                 //Condicional para proteger que el usuario no ingrese un número mayor a dos o menor a uno. 
                 if(opcion > 2 || opcion < 1){
                     //Mensaje de error si los números no son 1 o 2
