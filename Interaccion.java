@@ -36,20 +36,49 @@ public class Interaccion {
         else{return false;}
 
     }
-
+    public static void DatosAgregados(boolean correctos){
+        if(correctos){
+            System.out.println("\n> Su perfil ha sido agregado correctamente a la base de datos, podemos continuar.");
+        }
+        else{
+            System.out.println("\nHubo un error al momento de agregar su perfil, el error puede ser:");
+            System.out.println("Nombre del perfil ya en uso.\nCorreo de perfil ya en uso.\nNumero telefonico de perfil ya en uso.");
+            System.out.println("Por favor intente ingresar los datos nuevamente o iniciar sesion.");
+        }
+    }
     //Método para comprobar si es usuario o empresa. 
     public static String nombreUsuario(boolean esUsuario){
         //Si es usuario le pedirá el nombre de usuario
         if(esUsuario){
-            System.out.print("\nIngrese su nombre de usuario: ");
-            //Scanner sc = new Scanner(System.in);
-            return inputUsuario.nextLine();
+            String nom;
+            while(true){
+                System.out.print("\nIngrese su nombre de usuario: ");
+                //Scanner sc = new Scanner(System.in);
+                nom = inputUsuario.nextLine();
+                if(nom.length() != 0){
+                    break;
+                }
+                else{
+                    System.out.println("Error en input, intente de nuevo..");
+                }
+            }
+            return nom;
         }
         //Si es empresa le pedirá el nombre de empresa
         else{
-            System.out.print("\nIngrese el nombre de empresa: ");
-            //Scanner sc = new Scanner(System.in);
-            return inputUsuario.nextLine();
+            String nom;
+            while(true){
+                System.out.print("\nIngrese el nombre de empresa: ");
+                //Scanner sc = new Scanner(System.in);
+                nom = inputUsuario.nextLine();
+                if(nom.length() != 0){
+                    break;
+                }
+                else{
+                    System.out.println("Error en input, intente de nuevo..");
+                }
+            }
+            return nom;
         }
         //Dependiendo si es usuario y empresa, retornará el respectivo nombre. 
     }
@@ -119,6 +148,152 @@ public class Interaccion {
     }
     public static void errorDeInstancia(){
         System.out.println("Ocurrio un error durante el inicio de sesion, porfavor intentelo de nuevo.");
+    }
+
+    public static boolean CrearEntidad(){
+        System.out.println(">> Creando cuenta, porfavor especifique lo siguiente:");
+        System.out.println("\n[ 1 ] Crear usuario");
+        System.out.println("[ 2 ] Crear empresa\n");
+        int opcion;
+        //Ciclo while para pedirle a la persona una de las opciones del menú.
+        //Mientras que la persona no ingrese los datos correctos permanecerá en el while.
+        while(true){
+            try{
+                System.out.print("Opcion: ");
+                opcion = inputUsuario.nextInt();
+                inputUsuario.nextLine();
+                //Condicional para proteger que el usuario no ingrese un número mayor a dos o menor a uno. 
+                if(opcion > 2 || opcion < 1){
+                    //Mensaje de error si los números no son 1 o 2
+                    System.out.println("Opcion incorrecta, intenta de nuevo..");
+                }
+                //Si se ingresan los números correctos termina el ciclo while.
+                else{break;}
+            }
+            //Si se ingresa un caractér no numérico imprimirá un mensaje de error.
+            catch(Exception o){
+                inputUsuario.nextLine();
+                System.out.println("Caracter invalido! Intenta de nuevo..");
+            }
+        }
+        //Si la opción es 1 el método retorna true, de lo contrario regresa false. 
+        if(opcion == 1){return true;}
+        else{return false;}
+    }
+    public static String[] NuevaCreacionNombre(boolean esUsuario){
+        String nombre, numero, correo, clave;
+        if(esUsuario){
+            while(true){
+                System.out.print("\n> Ingrese el nombre de usuario  : ");
+                //Scanner sc = new Scanner(System.in);
+                nombre = inputUsuario.nextLine();
+                if(nombre.length() != 0){
+                    break;
+                }
+                else{
+                    System.out.println("Error en input, intente de nuevo..");
+                }
+            }
+            while(true){
+                System.out.print("> Ingrese su numero de telefono : ");
+                numero = inputUsuario.nextLine();
+                if(numero.length() != 8){
+                    System.out.println("El numero de telefono no es valido (8 numeros), intenta de nuevo..");
+                }
+                else{
+                    boolean esNumeroValido = false;
+                    try {
+                        Integer.parseInt(numero);
+                        esNumeroValido = true;
+                    } catch (Exception e) {
+                        System.out.println("El numero de telefono contiene caracteres invalidos. Intente de nuevo..");
+                    }
+                    if(esNumeroValido){ break; }
+                    else{ ; }
+                
+                }
+            }
+            while(true){
+                System.out.print("> Ingrese su correo             : ");
+                correo = inputUsuario.nextLine();
+                int tieneArroba = 0;
+                for(int i = 0; i < correo.length(); i++){
+                    if(correo.charAt(i) == '@'){
+                        tieneArroba++;
+                    }
+                }
+                if(tieneArroba != 1){
+                    System.out.println("El correo carece de una @ o se presentan multiples veces, porfavor intente de nuevo..");
+                }
+                else{ break; }
+            }
+            while(true){
+                System.out.print("> Ingrese su clave              : ");
+                clave = inputUsuario.nextLine();
+                System.out.print("> Repita su clave               : ");
+                String clave2 = inputUsuario.nextLine();
+                if(clave.equals(clave2)){
+                    break;
+                }
+                else{ System.out.println("La clave no coincide, intente de nuevo..");}
+            }
+        }
+        else{
+            while(true){
+                System.out.print("\n> Ingrese el nombre de la empresa : ");
+                //Scanner sc = new Scanner(System.in);
+                nombre = inputUsuario.nextLine();
+                if(nombre.length() != 0){
+                    break;
+                }
+                else{
+                    System.out.println("Error en input, intente de nuevo..");
+                }
+            }
+            while(true){
+                System.out.print("> Ingrese el numero de telefono   : ");
+                numero = inputUsuario.nextLine();
+                if(numero.length() != 8){
+                    System.out.println("El numero de telefono no es valido (8 numeros), intenta de nuevo..");
+                }
+                else{
+                    boolean esNumeroValido = false;
+                    try {
+                        Integer.parseInt(numero);
+                        esNumeroValido = true;
+                    } catch (Exception e) {
+                        System.out.println("El numero de telefono contiene caracteres invalidos. Intente de nuevo..");
+                    }
+                    if(esNumeroValido){ break; }
+                    else{ ; }
+                }
+            }
+            while(true){
+                System.out.print("> Ingrese el correo               : ");
+                correo = inputUsuario.nextLine();
+                int tieneArroba = 0;
+                for(int i = 0; i < correo.length(); i++){
+                    if(correo.charAt(i) == '@'){
+                        tieneArroba++;
+                    }
+                }
+                if(tieneArroba != 1){
+                    System.out.println("El correo carece de una @ o se presentan multiples veces, porfavor intente de nuevo..");
+                }
+                else{ break; }
+            }
+            while(true){
+                System.out.print("> Ingrese la clave                : ");
+                clave = inputUsuario.nextLine();
+                System.out.print("> Repita la clave                 : ");
+                String clave2 = inputUsuario.nextLine();
+                if(clave.equals(clave2)){
+                    break;
+                }
+                else{ System.out.println("La clave no coincide, intente de nuevo..");}
+            }
+        }
+        return new String[]{nombre,numero,correo,clave};
     }
     
 }

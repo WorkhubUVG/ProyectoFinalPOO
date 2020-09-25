@@ -5,7 +5,7 @@ class Controlador {
         InicioPrograma();
 
     }
-    private static void InicioPrograma(){
+    public static void InicioPrograma(){
 
         // >> El primer paso del programa es saber si la entidad ya existe o si necesita ser creada:
         boolean usuarioExistente = Interaccion.MenuInicio();
@@ -52,7 +52,7 @@ class Controlador {
     private static void SesionIniciada(Entidad tipoDeEntidad){
         if(tipoDeEntidad.getClass().getName().equals("Usuario")){
             // forzando a la instancia 
-            Usuario tipo = (Usuario)tipoDeEntidad;
+           // Usuario tipo = (Usuario)tipoDeEntidad;
         }
         else if(tipoDeEntidad.getClass().getName().equals("Empresa")){
             // Este sera el controlador para la sesion iniciada de tipo Empresa
@@ -61,8 +61,43 @@ class Controlador {
     }
 
 
+
     private static void registroUsuario() {
-        ;
+        String[] datosNuevaEntidad;
+        // Se comienza la creacion de una entidad, necesitamos saber si son usuarios o empresas:
+        if(Interaccion.CrearEntidad()){
+            // creacion de usuario:
+            datosNuevaEntidad = Interaccion.NuevaCreacionNombre(true);
+            if(Almacen.RevDatosEntidad(true, datosNuevaEntidad)){
+                // datos agregados
+                Almacen.agregarDatosCSV(true, datosNuevaEntidad);
+                Interaccion.DatosAgregados(true);
+                InicioPrograma();
+            }
+            else{
+                // Error, datos sin agregar
+                Interaccion.DatosAgregados(false);
+                InicioPrograma();
+            }
+        }
+        else{
+            // creacion de empresa:
+            datosNuevaEntidad = Interaccion.NuevaCreacionNombre(false);
+            if(Almacen.RevDatosEntidad(false, datosNuevaEntidad)){
+                // datos agregados
+                Almacen.agregarDatosCSV(false, datosNuevaEntidad);
+                Interaccion.DatosAgregados(true);
+                InicioPrograma();
+            }
+            else{
+                // Error, datos sin agregar
+                Interaccion.DatosAgregados(false);
+                InicioPrograma();
+            }
+        }
+        
+        
+
 
     }
 

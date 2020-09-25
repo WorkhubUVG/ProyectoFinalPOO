@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,7 +22,7 @@ public class Almacen{
             Scanner lectorUsuarios = new Scanner(ArchivoUsuarios);
             while(lectorUsuarios.hasNextLine()){
                 String datosUsuarioEspecifico = lectorUsuarios.nextLine();
-                listaUsuarios.add(datosUsuarioEspecifico.split(","));
+                listaUsuarios.add(datosUsuarioEspecifico.split(">>"));
             }
             lectorUsuarios.close();
         }
@@ -36,7 +37,7 @@ public class Almacen{
             Scanner lectorEmpresas = new Scanner(ArchivoEmpresas);
             while(lectorEmpresas.hasNextLine()){
                 String datosUsuarioEspecifico = lectorEmpresas.nextLine();
-                listaEmpresas.add(datosUsuarioEspecifico.split(","));
+                listaEmpresas.add(datosUsuarioEspecifico.split(">>"));
             }
             lectorEmpresas.close();
         }
@@ -94,6 +95,118 @@ public class Almacen{
             ;
         }
         return correosEncontrados;
+    }
+
+    public static void agregarDatosCSV(boolean esUsuario, String[] datos){
+
+        if(esUsuario){
+            try {
+                
+                File objetoCSV = new File("usuariosExistentes.csv");
+                if(objetoCSV.createNewFile()){
+                    System.out.println("Archivo creado");
+                }
+                else{
+                    System.out.println("Archivo existente");
+                }
+
+            } catch (Exception e) {
+                ;
+            }
+            try {
+                FileWriter escritor = new FileWriter("usuariosExistentes.csv",true);
+                escritor.write("\n"+datos[0]+">>"+datos[1]+">>"+datos[2]+">>"+datos[3]);
+                escritor.close();
+
+            } catch (Exception e) {
+                ;
+            }
+        }
+        else{
+            try {
+                
+                File objetoCSV = new File("empresasExistentes.csv");
+                if(objetoCSV.createNewFile()){
+                    System.out.println("Archivo creado");
+                }
+                else{
+                    System.out.println("Archivo existente");
+                }
+
+            } catch (Exception e) {
+                ;
+            }
+            try {
+                FileWriter escritor = new FileWriter("empresasExistentes.csv",true);
+                escritor.write("\n"+datos[0]+">>"+datos[1]+">>"+datos[2]+">>"+datos[3]);
+                escritor.close();
+
+            } catch (Exception e) {
+                ;
+            }
+        }
+    }
+    public static boolean RevDatosEntidad(boolean esUsuario, String[] datosProporcionados){
+        if(esUsuario){
+            // OBTENEMOS DATOS PREVIOS ALMACENADOS EN EN CSV:
+            ArrayList<String[]> datosPreviosAlmacenados = new ArrayList<>();
+            try {
+                File objetoCSV = new File("usuariosExistentes.csv");
+                Scanner archivoCSV = new Scanner(objetoCSV);
+                while(archivoCSV.hasNextLine()){
+                    datosPreviosAlmacenados.add(archivoCSV.nextLine().split(">>"));
+                }
+                archivoCSV.close();
+            } catch (Exception e) {
+                ;
+            }
+            // VERIFICAMOS QUE LOS DATOS NO ESTEN REPETIDOS:
+            
+            boolean datoRepetido = false;
+            for(int posLista = 0; posLista < datosPreviosAlmacenados.size(); posLista++){
+                if(datosPreviosAlmacenados.get(posLista)[0].equals(datosProporcionados[0])){
+                    datoRepetido = true;
+                }
+                if(datosPreviosAlmacenados.get(posLista)[1].equals(datosProporcionados[1])){
+                    datoRepetido = true;
+                }
+                if(datosPreviosAlmacenados.get(posLista)[2].equals(datosProporcionados[2])){
+                    datoRepetido = true;
+                }
+            }
+            if(datoRepetido){ return false; }
+            else{ return true;}
+        }
+        else{
+            // OBTENEMOS DATOS PREVIOS ALMACENADOS EN EN CSV:
+            ArrayList<String[]> datosPreviosAlmacenados = new ArrayList<>();
+            try {
+                File objetoCSV = new File("empresasExistentes.csv");
+                Scanner archivoCSV = new Scanner(objetoCSV);
+                while(archivoCSV.hasNextLine()){
+                    datosPreviosAlmacenados.add(archivoCSV.nextLine().split(">>"));
+                }
+                archivoCSV.close();
+            } catch (Exception e) {
+                ;
+            }
+            // VERIFICAMOS QUE LOS DATOS NO ESTEN REPETIDOS:
+            boolean datoRepetido = false;
+            for(int posLista = 0; posLista < datosPreviosAlmacenados.size(); posLista++){
+                if(datosPreviosAlmacenados.get(posLista)[0].equals(datosProporcionados[0])){
+                    datoRepetido = true;
+                }
+                if(datosPreviosAlmacenados.get(posLista)[1].equals(datosProporcionados[1])){
+                    datoRepetido = true;
+                }
+                if(datosPreviosAlmacenados.get(posLista)[2].equals(datosProporcionados[2])){
+                    datoRepetido = true;
+                }
+            }
+            if(datoRepetido){ return false; }
+            else{ return true;}
+        }
+
     }
     
 }
