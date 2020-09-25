@@ -9,10 +9,22 @@ public class Entidad{ //creando la clase madre entidad
 
     public void revisarCorreosEntidad(){
         if(encontrarCorreos()){
-            // .....
-            for(int posCorreo = 0; posCorreo < CorreosDeEntidad.size(); posCorreo++){
-                Interaccion.ImprimirCorreos(CorreosDeEntidad.get(posCorreo),posCorreo);
-                if(posCorreo == (CorreosDeEntidad.size() - 1)){ Interaccion.imprimirBandejaEntrada(true); }
+            ArrayList<String> correosOrganizados = new ArrayList<>();
+            int dirCorreoTamLargo = 0;
+            for(int i = 0; i < CorreosDeEntidad.size(); i++){
+                dirCorreoTamLargo = (CorreosDeEntidad.get(i).split(":")[0].length() > dirCorreoTamLargo) ? CorreosDeEntidad.get(i).split(":")[0].length() : dirCorreoTamLargo;
+            }
+            for(int i = 0; i < CorreosDeEntidad.size(); i++){
+                String dirCorreo = CorreosDeEntidad.get(i).split(":")[0];
+                if(dirCorreo.length() < dirCorreoTamLargo){
+                    int dif = dirCorreoTamLargo - dirCorreo.length();
+                    dirCorreo = dirCorreo + " ".repeat(dif);
+                }
+                correosOrganizados.add(" > " + dirCorreo + ":" + CorreosDeEntidad.get(i).split(":")[1]);
+            }
+            for(int posCorreo = 0; posCorreo < correosOrganizados.size(); posCorreo++){
+                Interaccion.ImprimirCorreos(correosOrganizados.get(posCorreo),posCorreo);
+                if(posCorreo == (correosOrganizados.size() - 1)){ Interaccion.imprimirBandejaEntrada(true); }
             }
         }
         else{ Interaccion.sinCorreos(); }
