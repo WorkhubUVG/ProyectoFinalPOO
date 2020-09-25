@@ -61,9 +61,9 @@ public class Interaccion {
     }
     //Método para comprobar si el la persona es un usuario o una empresa. 
     public static boolean usuario_empresa(){
-        System.out.println("\nIngrese el tipo de usuario:\n");
-        System.out.println("\n [ 1 ] Usuario");
-        System.out.println(" [ 2 ] Empresa\n");
+        System.out.println("\nIngrese el tipo de usuario:");
+        System.out.println("\n[ 1 ] Usuario");
+        System.out.println("[ 2 ] Empresa\n");
         int opcion;
         //Ciclo while para pedirle a la persona una de las opciones del menú.
         //Mientras que la persona no ingrese los datos correctos permanecerá en el while.
