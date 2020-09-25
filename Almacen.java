@@ -94,8 +94,6 @@ public class Almacen{
             ;
         }
         return correosEncontrados;
-
     }
-
     
 }

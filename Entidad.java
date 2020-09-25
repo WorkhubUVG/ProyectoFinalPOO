@@ -9,15 +9,13 @@ public class Entidad{ //creando la clase madre entidad
 
     public void revisarCorreosEntidad(){
         if(encontrarCorreos()){
+            // .....
             for(int posCorreo = 0; posCorreo < CorreosDeEntidad.size(); posCorreo++){
-                // CAMBIAR SYSOUT A INTERACCION 
-                System.out.println(CorreosDeEntidad.get(posCorreo));
+                Interaccion.ImprimirCorreos(CorreosDeEntidad.get(posCorreo),posCorreo);
+                if(posCorreo == (CorreosDeEntidad.size() - 1)){ Interaccion.imprimirBandejaEntrada(true); }
             }
         }
-        else{
-            // CAMBIAR SYSOUT A INTERACCION 
-            System.out.println("No tienes correos aun!");
-        }
+        else{ Interaccion.sinCorreos(); }
     }
     private boolean encontrarCorreos(){
         if(Almacen.revisarCorreosNuevos(this.CorreoElectronico).size() != 0){

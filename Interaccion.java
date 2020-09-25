@@ -98,11 +98,26 @@ public class Interaccion {
     }
     public static void InicioSesionCorrecto(String nombreEntidad, String correoEntidad, boolean esUsuario){
         if(esUsuario){
-            System.out.println("\nSe ha iniciado sesion de usuario como " + nombreEntidad + " con asociacion al correo: " + correoEntidad+"\n");
+            System.out.println("\n>> Se ha iniciado sesion de usuario como " + nombreEntidad + " con asociacion al correo: " + correoEntidad+"\n");
         }
         else{
-            System.out.println("\nSe ha iniciado sesion de empresa como " + nombreEntidad + " con asociacion al correo: " + correoEntidad+"\n");
+            System.out.println("\n>> Se ha iniciado sesion de empresa como " + nombreEntidad + " con asociacion al correo: " + correoEntidad+"\n");
         }
+    }
+    public static void imprimirBandejaEntrada(boolean esUltimo){
+        if(esUltimo == false){ System.out.println("Bandeja de correos:\n"); }
+        else{System.out.println(" ");}
+        
+    }
+    public static void ImprimirCorreos(String correo, int posicion){
+        if(posicion == 0){ imprimirBandejaEntrada(false); }
+        System.out.println(correo);
+    }
+    public static void sinCorreos(){
+        System.out.println("No se han encontrado correos.");
+    }
+    public static void errorDeInstancia(){
+        System.out.println("Ocurrio un error durante el inicio de sesion, porfavor intentelo de nuevo.");
     }
     
 }
