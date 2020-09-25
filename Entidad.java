@@ -16,9 +16,8 @@ public class Entidad{ //creando la clase madre entidad
             }
             for(int i = 0; i < CorreosDeEntidad.size(); i++){
                 String dirCorreo = CorreosDeEntidad.get(i).split(":")[0];
-                if(dirCorreo.length() < dirCorreoTamLargo){
-                    int dif = dirCorreoTamLargo - dirCorreo.length();
-                    dirCorreo = dirCorreo + " ".repeat(dif);
+                if(CorreosDeEntidad.get(i).split(":")[0].length() < dirCorreoTamLargo){
+                    dirCorreo = dirCorreo + " ".repeat(dirCorreoTamLargo - dirCorreo.length());
                 }
                 correosOrganizados.add(" > " + dirCorreo + ":" + CorreosDeEntidad.get(i).split(":")[1]);
             }
