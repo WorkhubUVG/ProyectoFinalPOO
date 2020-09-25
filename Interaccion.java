@@ -89,5 +89,20 @@ public class Interaccion {
         if(opcion == 1){return true;}
         else{return false;}
     }
+
+    public static void mostrarErrorInicioSesion(boolean esUsuario){
+        if(esUsuario){
+            System.out.println("El nombre de usuario o clave son incorrectos!");
+        }
+        else{ System.out.println("El nombre de la empresa o la clave son incorrectas!"); }
+    }
+    public static void InicioSesionCorrecto(String nombreEntidad, String correoEntidad, boolean esUsuario){
+        if(esUsuario){
+            System.out.println("\nSe ha iniciado sesion de usuario como " + nombreEntidad + " con asociacion al correo: " + correoEntidad+"\n");
+        }
+        else{
+            System.out.println("\nSe ha iniciado sesion de empresa como " + nombreEntidad + " con asociacion al correo: " + correoEntidad+"\n");
+        }
+    }
     
 }

@@ -77,5 +77,25 @@ public class Almacen{
         return empresaElegida;
     }
 
+    public static ArrayList<String> revisarCorreosNuevos(String correoElectronico){
+        ArrayList<String> correosEncontrados = new ArrayList<>();
+        try {
+            File Correos = new File("correosExistentes.csv");
+            Scanner lectorCorreos = new Scanner(Correos);
+            while(lectorCorreos.hasNextLine()){
+                String[] correoDividido = lectorCorreos.nextLine().split(">>");
+                if(correoDividido[0].equals(correoElectronico)){
+                    correosEncontrados.add(correoDividido[1]+ " : " +correoDividido[2]);
+                }
+            }
+            lectorCorreos.close();
+        }
+        catch (Exception archivoNoEncontrado){
+            ;
+        }
+        return correosEncontrados;
+
+    }
+
     
 }
