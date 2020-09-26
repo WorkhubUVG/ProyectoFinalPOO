@@ -107,7 +107,7 @@ public class Almacen{
                     System.out.println("Archivo creado");
                 }
                 else{
-                    System.out.println("Archivo existente");
+                   // System.out.println("Archivo existente");
                 }
 
             } catch (Exception e) {
@@ -130,7 +130,7 @@ public class Almacen{
                     System.out.println("Archivo creado");
                 }
                 else{
-                    System.out.println("Archivo existente");
+                    //System.out.println("Archivo existente");
                 }
 
             } catch (Exception e) {
