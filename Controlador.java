@@ -1,5 +1,3 @@
-import jdk.internal.jshell.tool.resources.l10n;
-
 class Controlador {
     
     public static void main(String[] args) {
