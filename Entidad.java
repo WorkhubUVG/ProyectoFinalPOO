@@ -42,6 +42,9 @@ class Usuario extends Entidad {
         this.Nombre = nombre;
         this.CorreoElectronico = correo;
     }
+    void llamar(){
+        System.out.println();
+    }
 }
 
 class Empresa extends Entidad { //creando la clase heredada de entidad, que sera para las empresas

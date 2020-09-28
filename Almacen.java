@@ -71,7 +71,7 @@ public class Almacen{
 
     // Getter de la matriz de usuarioElegido
     public static String[] getUsuarioEncontrado(){
-        return usuarioElegido;
+        return usuarioElegido; 
     }
     // Getter de la matriz de empresaElegida
     public static String[] getEmpresaEncontrada(){

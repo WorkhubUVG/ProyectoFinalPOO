@@ -1,3 +1,5 @@
+import jdk.internal.jshell.tool.resources.l10n;
+
 class Controlador {
     
     public static void main(String[] args) {
@@ -52,10 +54,17 @@ class Controlador {
     private static void SesionIniciada(Entidad tipoDeEntidad){
         if(tipoDeEntidad.getClass().getName().equals("Usuario")){
             // forzando a la instancia 
-           // Usuario tipo = (Usuario)tipoDeEntidad;
+           Usuario usuarioIniciado = (Usuario)tipoDeEntidad;
+
+
+
         }
         else if(tipoDeEntidad.getClass().getName().equals("Empresa")){
             // Este sera el controlador para la sesion iniciada de tipo Empresa
+            Empresa empresaIniciada = (Empresa)tipoDeEntidad;
+
+
+            
         }
         else{Interaccion.errorDeInstancia(); InicioPrograma();}
     }
