@@ -295,5 +295,6 @@ public class Interaccion {
         }
         return new String[]{nombre,numero,correo,clave};
     }
+    public void enviarCorreo
     
 }
