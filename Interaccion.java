@@ -338,5 +338,13 @@ public class Interaccion {
             System.out.println("\nPresiona [ctrl + c] para salir...");
         }
     }
+
+    private void nuevoCorreo(){
+
+    }
+
+    private void verInformacion(){
+        
+    }
     
 }
