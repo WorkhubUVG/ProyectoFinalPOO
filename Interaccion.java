@@ -19,7 +19,7 @@ public class Interaccion {
                 opcion = inputUsuario.nextInt();
                 //(Programación defensiva)
                 //Protección por si el usuario elige un número menor a uno o mayor a dos, seguirá pidiendo la opción. 
-                if(opcion > 2 || opcion < 1){
+                if(opcion > 3 || opcion < 1){
                     System.out.println("Opcion incorrecta, intenta de nuevo..");
                 }
                 //Si el usuario ingresa los datos correctos terminará el ciclo while

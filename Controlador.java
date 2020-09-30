@@ -1,4 +1,4 @@
-class Controlador {
+public class Controlador {
     
     public static void main(String[] args) {
         // Se inicia el programa, unico metodo contenido en el main.
@@ -7,10 +7,10 @@ class Controlador {
     }
     public static void InicioPrograma(){
 
-        // >> El primer paso del programa es saber si la entidad ya existe o si necesita ser creada:
-        boolean usuarioExistente = Interaccion.MenuInicio();
+
+        
         // >> Una vez tenemos si el usuario ya existe o no, se manda a sus respectivos metodos:
-        if(usuarioExistente){  // >> Verifica si es usuario o empresa (true si es usuario, false si es empresa)
+        if(Interaccion.MenuInicio()){  // >> Verifica si es usuario o empresa (true si es usuario, false si es empresa)
             if(Interaccion.usuario_empresa()){ inicioDeSesion(true); }
              else{ inicioDeSesion(false); }
         }
@@ -52,15 +52,15 @@ class Controlador {
     private static void SesionIniciada(Entidad tipoDeEntidad){
         if(tipoDeEntidad.getClass().getName().equals("Usuario")){
             // forzando a la instancia 
-            Entidad usuarioIniciado = (Usuario)tipoDeEntidad;
-            Interaccion.MenuPrincipal(usuarioIniciado);
+           Usuario usuarioIniciado = (Usuario)tipoDeEntidad;
+
 
 
         }
         else if(tipoDeEntidad.getClass().getName().equals("Empresa")){
             // Este sera el controlador para la sesion iniciada de tipo Empresa
-            Entidad empresaIniciada = (Empresa)tipoDeEntidad;
-            Interaccion.MenuPrincipal(empresaIniciada);
+            Empresa empresaIniciada = (Empresa)tipoDeEntidad;
+
 
             
         }
