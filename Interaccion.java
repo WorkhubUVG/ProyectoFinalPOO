@@ -298,6 +298,54 @@ public class Interaccion {
         return new String[]{nombre,numero,correo,clave};
     }
     public void enviarCorreo(){
+
+    }
+    public static void MenuPrincipal(Entidad entidad){
+        System.out.println("Elije la accion que quiera realizar:       ");
+        System.out.println("\n[ 1 ] Ver correos");
+        System.out.println("[ 2 ] Enviar correos");
+        System.out.println("[ 3 ] Ver informacion");
+        System.out.println("[ 4 ] Salir\n");
+        int opcion;
+
+        while(true){
+            try{
+                System.out.print("Opcion: ");
+                opcion = inputUsuario.nextInt();
+                //(Programación defensiva)
+                //Protección por si el usuario elige un número menor a uno o mayor a dos, seguirá pidiendo la opción. 
+                if(opcion > 4 || opcion < 1){
+                    System.out.println("Opcion incorrecta, intenta de nuevo..");
+                }
+                //Si el usuario ingresa los datos correctos terminará el ciclo while
+                else{break;}
+            }
+            //Si el usuario ingresa una letra regresará un mensaje de error. 
+            catch(Exception o){
+                inputUsuario.nextLine();
+                System.out.println("Caracter invalido! Intenta de nuevo..");
+            }
+        }
+        
+        if(entidad.getClass().getName().equals("Usuario")){
+            //opciones de una entidad de tipo usuario.
+            
+
+        }else if(entidad.getClass().getName().equals("Empresa")){
+            //opciones de una entidad de tipo empresa.
+            
+        }
+
+        if(opcion == 4){
+            System.out.println("\nPresiona [ctrl + c] para salir...");
+        }
+    }
+
+    private void nuevoCorreo(){
+
+    }
+
+    private void verInformacion(){
         
     }
     

@@ -52,15 +52,15 @@ class Controlador {
     private static void SesionIniciada(Entidad tipoDeEntidad){
         if(tipoDeEntidad.getClass().getName().equals("Usuario")){
             // forzando a la instancia 
-           Usuario usuarioIniciado = (Usuario)tipoDeEntidad;
-
+            Entidad usuarioIniciado = (Usuario)tipoDeEntidad;
+            Interaccion.MenuPrincipal(usuarioIniciado);
 
 
         }
         else if(tipoDeEntidad.getClass().getName().equals("Empresa")){
             // Este sera el controlador para la sesion iniciada de tipo Empresa
-            Empresa empresaIniciada = (Empresa)tipoDeEntidad;
-
+            Entidad empresaIniciada = (Empresa)tipoDeEntidad;
+            Interaccion.MenuPrincipal(empresaIniciada);
 
             
         }
