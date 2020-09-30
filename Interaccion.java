@@ -301,8 +301,8 @@ public class Interaccion {
 
     }
     public static int  MenuPrincipal(Entidad entidad){
-        
-        System.out.println("Elije la accion que quiera realizar:       ");
+        //Pagina de inicio del programa.
+        System.out.println("\nElije la accion que quiera realizar:       ");
         System.out.println("\n[ 1 ] Ver correos");
         System.out.println("[ 2 ] Enviar correos");
         System.out.println("[ 3 ] Ver informacion");
@@ -328,7 +328,6 @@ public class Interaccion {
             }
         }
 
-        inputUsuario.nextLine();
 
         return opcion;
     }
