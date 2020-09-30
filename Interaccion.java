@@ -332,11 +332,11 @@ public class Interaccion {
         return opcion;
     }
 
-    private void nuevoCorreo(){
+    public void nuevoCorreo(){
 
     }
 
-    private void verInformacion(){
+    public void verInformacion(){
 
     }
     
