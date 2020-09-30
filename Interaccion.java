@@ -298,7 +298,8 @@ public class Interaccion {
     public void enviarCorreo(){
 
     }
-    public static void MenuPrincipal(Entidad entidad){
+    public static int  MenuPrincipal(Entidad entidad){
+        
         System.out.println("Elije la accion que quiera realizar:       ");
         System.out.println("\n[ 1 ] Ver correos");
         System.out.println("[ 2 ] Enviar correos");
@@ -324,19 +325,10 @@ public class Interaccion {
                 System.out.println("Caracter invalido! Intenta de nuevo..");
             }
         }
-        
-        if(entidad.getClass().getName().equals("Usuario")){
-            //opciones de una entidad de tipo usuario.
-            
 
-        }else if(entidad.getClass().getName().equals("Empresa")){
-            //opciones de una entidad de tipo empresa.
-            
-        }
+        inputUsuario.nextLine();
 
-        if(opcion == 4){
-            System.out.println("\nPresiona [ctrl + c] para salir...");
-        }
+        return opcion;
     }
 
     private void nuevoCorreo(){
@@ -344,7 +336,7 @@ public class Interaccion {
     }
 
     private void verInformacion(){
-        
+
     }
     
 }

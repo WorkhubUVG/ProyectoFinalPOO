@@ -24,7 +24,7 @@ class Controlador {
                 Interaccion.InicioSesionCorrecto(Almacen.getUsuarioEncontrado()[0], Almacen.getUsuarioEncontrado()[2], true);
                 // AQUI comienza el proceso de usuario
                 Usuario InstanciaUsuario = new Usuario(Almacen.getUsuarioEncontrado()[0],Almacen.getUsuarioEncontrado()[2]);
-                InstanciaUsuario.revisarCorreosEntidad();
+                //InstanciaUsuario.revisarCorreosEntidad();
                 // Sesion Iniciada:
                 SesionIniciada(InstanciaUsuario);
             }
@@ -39,7 +39,7 @@ class Controlador {
                 Interaccion.InicioSesionCorrecto(Almacen.getEmpresaEncontrada()[0], Almacen.getEmpresaEncontrada()[2], false);
                 // AQUI comienza el proceso de empresa
                 Empresa InstanciaEmpresa = new Empresa(Almacen.getEmpresaEncontrada()[0],Almacen.getEmpresaEncontrada()[2]);
-                InstanciaEmpresa.revisarCorreosEntidad();
+                //InstanciaEmpresa.revisarCorreosEntidad();
                 // Sesion Iniciada:
                 SesionIniciada(InstanciaEmpresa);
             }
@@ -53,15 +53,36 @@ class Controlador {
         if(tipoDeEntidad.getClass().getName().equals("Usuario")){
             // forzando a la instancia 
             Entidad usuarioIniciado = (Usuario)tipoDeEntidad;
-            Interaccion.MenuPrincipal(usuarioIniciado);
+            int opcion = 0;
+            while(true){
 
+                opcion = Interaccion.MenuPrincipal(usuarioIniciado);
+                if(opcion == 1){
+                    usuarioIniciado.revisarCorreosEntidad();
+                }if(opcion == 4){
+                    break;
+                }
+            }
+            
 
         }
         else if(tipoDeEntidad.getClass().getName().equals("Empresa")){
             // Este sera el controlador para la sesion iniciada de tipo Empresa
             Entidad empresaIniciada = (Empresa)tipoDeEntidad;
-            Interaccion.MenuPrincipal(empresaIniciada);
+            int opcion = 0;
+            while(true){
 
+                opcion = Interaccion.MenuPrincipal(empresaIniciada);
+                
+                if(opcion == 1){
+                    empresaIniciada.revisarCorreosEntidad();
+                }if(opcion == 4){
+                    break;
+                }
+                
+
+            }
+            
             
         }
         else{Interaccion.errorDeInstancia(); InicioPrograma();}
