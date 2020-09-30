@@ -1,4 +1,4 @@
-class Controlador {
+public class Controlador {
     
     public static void main(String[] args) {
         // Se inicia el programa, unico metodo contenido en el main.
@@ -7,10 +7,10 @@ class Controlador {
     }
     public static void InicioPrograma(){
 
-        // >> El primer paso del programa es saber si la entidad ya existe o si necesita ser creada:
-        boolean usuarioExistente = Interaccion.MenuInicio();
+
+        
         // >> Una vez tenemos si el usuario ya existe o no, se manda a sus respectivos metodos:
-        if(usuarioExistente){  // >> Verifica si es usuario o empresa (true si es usuario, false si es empresa)
+        if(Interaccion.MenuInicio()){  // >> Verifica si es usuario o empresa (true si es usuario, false si es empresa)
             if(Interaccion.usuario_empresa()){ inicioDeSesion(true); }
              else{ inicioDeSesion(false); }
         }
@@ -24,7 +24,7 @@ class Controlador {
                 Interaccion.InicioSesionCorrecto(Almacen.getUsuarioEncontrado()[0], Almacen.getUsuarioEncontrado()[2], true);
                 // AQUI comienza el proceso de usuario
                 Usuario InstanciaUsuario = new Usuario(Almacen.getUsuarioEncontrado()[0],Almacen.getUsuarioEncontrado()[2]);
-                //InstanciaUsuario.revisarCorreosEntidad();
+                InstanciaUsuario.revisarCorreosEntidad();
                 // Sesion Iniciada:
                 SesionIniciada(InstanciaUsuario);
             }
@@ -39,7 +39,7 @@ class Controlador {
                 Interaccion.InicioSesionCorrecto(Almacen.getEmpresaEncontrada()[0], Almacen.getEmpresaEncontrada()[2], false);
                 // AQUI comienza el proceso de empresa
                 Empresa InstanciaEmpresa = new Empresa(Almacen.getEmpresaEncontrada()[0],Almacen.getEmpresaEncontrada()[2]);
-                //InstanciaEmpresa.revisarCorreosEntidad();
+                InstanciaEmpresa.revisarCorreosEntidad();
                 // Sesion Iniciada:
                 SesionIniciada(InstanciaEmpresa);
             }
@@ -52,37 +52,16 @@ class Controlador {
     private static void SesionIniciada(Entidad tipoDeEntidad){
         if(tipoDeEntidad.getClass().getName().equals("Usuario")){
             // forzando a la instancia 
-            Entidad usuarioIniciado = (Usuario)tipoDeEntidad;
-            int opcion = 0;
-            while(true){
+           Usuario usuarioIniciado = (Usuario)tipoDeEntidad;
 
-                opcion = Interaccion.MenuPrincipal(usuarioIniciado);
-                if(opcion == 1){
-                    usuarioIniciado.revisarCorreosEntidad();
-                }if(opcion == 4){
-                    break;
-                }
-            }
-            
+
 
         }
         else if(tipoDeEntidad.getClass().getName().equals("Empresa")){
             // Este sera el controlador para la sesion iniciada de tipo Empresa
-            Entidad empresaIniciada = (Empresa)tipoDeEntidad;
-            int opcion = 0;
-            while(true){
+            Empresa empresaIniciada = (Empresa)tipoDeEntidad;
 
-                opcion = Interaccion.MenuPrincipal(empresaIniciada);
-                
-                if(opcion == 1){
-                    empresaIniciada.revisarCorreosEntidad();
-                }if(opcion == 4){
-                    break;
-                }
-                
 
-            }
-            
             
         }
         else{Interaccion.errorDeInstancia(); InicioPrograma();}

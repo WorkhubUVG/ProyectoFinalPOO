@@ -9,7 +9,8 @@ public class Interaccion {
         //Se imprime un mensaje donde se le pide al usuario que seleccione una opción. (Inicio de seción o registrarse). 
         System.out.println("\nBienvenido a WorkHub, porfavor elige una opcion:\n");
         System.out.println  ("[ 1 ] Iniciar Sesion");
-        System.out.println  ("[ 2 ] Registrarme\n");
+        System.out.println  ("[ 2 ] Registrarme");
+        System.out.println  ("[ 3 ] Obtener ayuda.\n");
         int opcion;
         //Ciclo while para obtener la opción ingresada por el usuario, siendo protegido por try-catch. 
         while(true){
@@ -18,7 +19,7 @@ public class Interaccion {
                 opcion = inputUsuario.nextInt();
                 //(Programación defensiva)
                 //Protección por si el usuario elige un número menor a uno o mayor a dos, seguirá pidiendo la opción. 
-                if(opcion > 2 || opcion < 1){
+                if(opcion > 3 || opcion < 1){
                     System.out.println("Opcion incorrecta, intenta de nuevo..");
                 }
                 //Si el usuario ingresa los datos correctos terminará el ciclo while
@@ -31,7 +32,8 @@ public class Interaccion {
             }
         }
         
-        //Si se completa el ciclo while y la opción es uno retornará un true, de otro modo retornará false. 
+        //Si se completa el ciclo while y la opción es uno retornará un true, de otro modo retornará false.
+        if(opcion==3){ayuda();} 
         if(opcion == 1){return true;}
         else{return false;}
 
@@ -339,4 +341,10 @@ public class Interaccion {
 
     }
     
+    //Problemas. 
+    public static void ayuda(){
+        
+        //Cuerpo. 
+        System.out.println("Ingrese el problema que ha tenido.");
+    } 
 }
