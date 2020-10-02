@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Interaccion {
     
     private static Scanner inputUsuario = new Scanner(System.in);
+    //Variable para el scanner de la queja. 
+    private static Scanner soporte = new Scanner(System.in);
 
     //Método para el menú de inicio de seción
     public static boolean MenuInicio(){
@@ -345,5 +347,11 @@ public class Interaccion {
         
         //Cuerpo. 
         System.out.println("Ingrese el problema que ha tenido.");
+       
+        //Variable para el soporte.
+        String sop; 
+
+        //Recibiendo la queja. 
+        sop = soporte.nextLine();
     } 
 }
