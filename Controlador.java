@@ -59,7 +59,7 @@ public class Controlador {
                 if(opcion == 1){
                     usuarioIniciado.revisarCorreosEntidad();
                 }else if(opcion == 4){
-                    break;
+                    InicioPrograma();
                 }else if(opcion == 2){
                     Interaccion.nuevoCorreo(usuarioIniciado);
                 }
@@ -77,7 +77,7 @@ public class Controlador {
                 if(opcion == 1){
                     empresaIniciada.revisarCorreosEntidad();
                 }else if(opcion == 4){
-                    break;
+                    InicioPrograma();
                 }else if(opcion == 2){
                     Interaccion.nuevoCorreo(empresaIniciada);
                 }

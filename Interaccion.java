@@ -12,7 +12,8 @@ public class Interaccion {
         System.out.println("\nBienvenido a WorkHub, porfavor elige una opcion:\n");
         System.out.println  ("[ 1 ] Iniciar Sesion");
         System.out.println  ("[ 2 ] Registrarme");
-        System.out.println  ("[ 3 ] Obtener ayuda.\n");
+        System.out.println  ("[ 3 ] Obtener ayuda");
+        System.out.println  ("[ 4 ] Salir\n");
         int opcion;
         //Ciclo while para obtener la opción ingresada por el usuario, siendo protegido por try-catch. 
         while(true){
@@ -21,7 +22,7 @@ public class Interaccion {
                 opcion = inputUsuario.nextInt();
                 //(Programación defensiva)
                 //Protección por si el usuario elige un número menor a uno o mayor a dos, seguirá pidiendo la opción. 
-                if(opcion > 3 || opcion < 1){
+                if(opcion > 4 || opcion < 1){
                     System.out.println("Opcion incorrecta, intenta de nuevo..");
                 }
                 //Si el usuario ingresa los datos correctos terminará el ciclo while
@@ -35,6 +36,7 @@ public class Interaccion {
         }   
         
         //Si se completa el ciclo while y la opción es uno retornará un true, de otro modo retornará false.
+        if(opcion==4){ System.exit(0);}
         if(opcion==3){ayuda(); Controlador.InicioPrograma();} 
         if(opcion == 1){return true;}
         else{return false;}
@@ -308,7 +310,7 @@ public class Interaccion {
         System.out.println("\n[ 1 ] Ver correos");
         System.out.println("[ 2 ] Enviar correos");
         System.out.println("[ 3 ] Ver informacion");
-        System.out.println("[ 4 ] Salir\n");
+        System.out.println("[ 4 ] Cerrar Sesion\n");
         int opcion;
 
         while(true){
@@ -338,10 +340,10 @@ public class Interaccion {
         String correo = entidad.CorreoElectronico;
         System.out.println("> De              : "+correo);
         String nuevocorreo;
-        String para = inputUsuario.nextLine();
 
         while(true){
-            System.out.print("> Para             : ");
+            System.out.print("> Para            : ");
+            inputUsuario.nextLine();
             nuevocorreo = inputUsuario.nextLine();
             int tieneArroba = 0;
             for(int i = 0; i < nuevocorreo.length(); i++){
@@ -355,9 +357,12 @@ public class Interaccion {
             else{ break; }
         }
 
-        System.out.println("> Mensaje           : ");
-        String mensaje = inputUsuario.nextLine();
+        System.out.print("> Mensaje         : ");
+        String mensaje;
+        mensaje = inputUsuario.nextLine();
 
+        String[] datos = new String[]{nuevocorreo,correo,mensaje};
+        Almacen.agregarCorreo(datos);
     }
 
     public void verInformacion(){

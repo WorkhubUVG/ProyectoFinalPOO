@@ -208,5 +208,31 @@ public class Almacen{
         }
 
     }
+
+    public static void agregarCorreo(String[] datos){
+
+        try {
+                
+            File objetoCSV = new File("correosExistentes.csv");
+            if(objetoCSV.createNewFile()){
+                System.out.println("Archivo creado");
+            }
+            else{
+               // System.out.println("Archivo existente");
+            }
+
+        } catch (Exception e) {
+            ;
+        }
+        try {
+            FileWriter escritor = new FileWriter("correosExistentes.csv",true);
+            escritor.write("\n"+datos[0]+">>"+datos[1]+">>"+datos[2]);
+            escritor.close();
+
+        } catch (Exception e) {
+            ;
+        }
+        
+    }
     
 }
