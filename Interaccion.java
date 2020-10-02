@@ -185,7 +185,7 @@ public class Interaccion {
         else{return false;}
     }
     public static String[] NuevaCreacionNombre(boolean esUsuario){
-        String nombre, numero, correo, clave;
+        String nombre, numero, correo, clave, datoextra1, datoextra2;
         if(esUsuario){
             while(true){
                 System.out.print("\n> Ingrese el nombre de usuario  : ");
