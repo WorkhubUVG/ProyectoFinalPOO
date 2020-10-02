@@ -371,14 +371,29 @@ public class Interaccion {
     
     //Problemas. 
     public static void ayuda(){
-        
-        //Cuerpo. 
-        System.out.println("Ingrese el problema que ha tenido.");
-       
-        //Variable para el soporte.
-        String sop; 
+        //Cuerpo del método. 
 
-        //Recibiendo la queja. 
-        sop = soporte.nextLine();
+        //Variable para el soporte.
+        String sop;
+
+        //Pidiendo al usuario que meta la queja o problema. En caso de que no ingrese nada, entonces el programa seguirá pidiendo que meta caracteres.
+        while(true){
+         
+            //Pidiendo al usuario la queja.
+            System.out.println("Ingrese el problema que ha tenido.");
+        
+            //Recibiendo la queja. 
+            sop = soporte.nextLine();
+            
+            //Analizando si se ingresó bien la queja.
+            if(sop.length() != 0){
+                break;
+            }
+            else{
+
+                //Error en la queja.
+                System.out.println("Error la queja, intente de nuevo..");
+            }
+        }
     } 
 }
