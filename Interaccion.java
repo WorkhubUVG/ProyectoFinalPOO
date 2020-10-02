@@ -335,7 +335,29 @@ public class Interaccion {
     }
 
     public static void nuevoCorreo(Entidad entidad){
-        
+        String correo = entidad.CorreoElectronico;
+        System.out.println("> De              : "+correo);
+        String nuevocorreo;
+        String para = inputUsuario.nextLine();
+
+        while(true){
+            System.out.print("> Para             : ");
+            nuevocorreo = inputUsuario.nextLine();
+            int tieneArroba = 0;
+            for(int i = 0; i < nuevocorreo.length(); i++){
+                if(nuevocorreo.charAt(i) == '@'){
+                    tieneArroba++;
+                }
+            }
+            if(tieneArroba != 1){
+                System.out.println("El correo carece de una @ o se presentan multiples veces, porfavor intente de nuevo..");
+            }
+            else{ break; }
+        }
+
+        System.out.println("> Mensaje           : ");
+        String mensaje = inputUsuario.nextLine();
+
     }
 
     public void verInformacion(){
