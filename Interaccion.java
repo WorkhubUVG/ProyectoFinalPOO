@@ -334,8 +334,8 @@ public class Interaccion {
         return opcion;
     }
 
-    public void nuevoCorreo(){
-
+    public static void nuevoCorreo(Entidad entidad){
+        
     }
 
     public void verInformacion(){

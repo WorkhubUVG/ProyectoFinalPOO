@@ -60,6 +60,8 @@ public class Controlador {
                     usuarioIniciado.revisarCorreosEntidad();
                 }else if(opcion == 4){
                     break;
+                }else if(opcion == 2){
+                    Interaccion.nuevoCorreo(usuarioIniciado);
                 }
             }
 
@@ -76,6 +78,8 @@ public class Controlador {
                     empresaIniciada.revisarCorreosEntidad();
                 }else if(opcion == 4){
                     break;
+                }else if(opcion == 2){
+                    Interaccion.nuevoCorreo(empresaIniciada);
                 }
             }
 
