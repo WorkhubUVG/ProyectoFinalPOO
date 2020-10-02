@@ -30,10 +30,10 @@ public class Interaccion {
                 inputUsuario.nextLine();
                 System.out.println("Caracter invalido! Intenta de nuevo..");
             }
-        }
+        }   
         
         //Si se completa el ciclo while y la opción es uno retornará un true, de otro modo retornará false.
-        if(opcion==3){ayuda();} 
+        if(opcion==3){ayuda(); Controlador.InicioPrograma();} 
         if(opcion == 1){return true;}
         else{return false;}
 
