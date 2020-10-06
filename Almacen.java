@@ -1,4 +1,6 @@
+
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -235,4 +237,40 @@ public class Almacen{
         
     }
     
+    //Método para imprimir la información de las empresas
+    public static void printInfoEmpresas(){
+        String empresasNice = "empresasExistentes.csv";
+        File file = new File (empresasNice);
+        try{
+            Scanner empresasQueExisten = new Scanner(file);
+            while(empresasQueExisten.hasNext()){
+                String data = empresasQueExisten.next();//Toma toda la linea
+                String [] valores = data.split(">>");
+                System.out.println("\n"+"Nombre de Empresa:\n"+"-"+valores[0]+"\nCorreo de Empresa:\n"+"-"+valores[2]);
+            }
+            empresasQueExisten.close();
+        }
+        catch (Exception archivoNoEncontrado){
+            System.out.println("No existe el archivo");
+            archivoNoEncontrado.printStackTrace();
+        }
+    }
+    //Método para imprimir la información de los usuarios
+    public static void printInfoUsuarios(){
+        String usuariosNice = "usuariosExistentes.csv";
+        File file = new File (usuariosNice);
+        try{
+            Scanner usuariosQueExisten = new Scanner(file);
+            while(usuariosQueExisten.hasNext()){
+                String data = usuariosQueExisten.next();//Toma toda la linea
+                String [] valores = data.split(">>");
+                
+                System.out.println("\n"+"Nombre de Usuario:\n"+"-"+valores[0]);
+            }
+            usuariosQueExisten.close();
+        }
+        catch (Exception archivoNoEncontrado){
+            archivoNoEncontrado.printStackTrace();
+        }
+    }
 }

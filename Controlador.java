@@ -11,6 +11,7 @@ public class Controlador {
         
         // >> Una vez tenemos si el usuario ya existe o no, se manda a sus respectivos metodos:
         if(Interaccion.MenuInicio()){  // >> Verifica si es usuario o empresa (true si es usuario, false si es empresa)
+            
             if(Interaccion.usuario_empresa()){ inicioDeSesion(true); }
              else{ inicioDeSesion(false); }
         }
@@ -63,6 +64,9 @@ public class Controlador {
                 }else if(opcion == 2){
                     Interaccion.nuevoCorreo(usuarioIniciado);
                 }
+                else if (opcion == 3){
+                    Almacen.printInfoEmpresas();
+                }
             }
 
 
@@ -80,6 +84,9 @@ public class Controlador {
                     InicioPrograma();
                 }else if(opcion == 2){
                     Interaccion.nuevoCorreo(empresaIniciada);
+                }
+                else if (opcion == 3){
+                    Almacen.printInfoUsuarios();//info usuarios existentes
                 }
             }
 
