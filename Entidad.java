@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Entidad{ //creando la clase madre entidad
+public abstract class Entidad{ //creando la clase madre entidad
 
     //Definiendo las variables de los objetos creados a partir de esta clase:
     private ArrayList<String> CorreosDeEntidad = new ArrayList<>();
