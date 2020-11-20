@@ -376,16 +376,16 @@ public class Interaccion {
         //Variable para el soporte.
         String sop;
 
-        //Pidiendo al usuario que meta la queja o problema. En caso de que no ingrese nada, entonces el programa seguirá pidiendo que meta caracteres.
+        //Pidiendo al usuario que ingrese la queja o problema. En caso de que no ingrese nada, entonces el programa seguirá pidiendo que ingrese caracteres.
         while(true){
          
-            //Pidiendo al usuario la queja.
+            //Pidiendo al usuario el problema.
             System.out.println("Ingrese el problema que ha tenido.");
         
-            //Recibiendo la queja. 
+            //Recibiendo el problema. 
             sop = soporte.nextLine();
             
-            //Analizando si se ingresó bien la queja.
+            //Analizando si se ingresó bien el problema.
             if(sop.length() != 0){
                 break;
             }

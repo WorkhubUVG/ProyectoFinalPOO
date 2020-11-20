@@ -1,7 +1,7 @@
 public class Controlador {
     
     public static void main(String[] args) {
-        // Se inicia el programa, unico metodo contenido en el main.
+        //Inicio del programa y único método contenido en el main.
         InicioPrograma();
 
     }
@@ -11,7 +11,6 @@ public class Controlador {
         
         // >> Una vez tenemos si el usuario ya existe o no, se manda a sus respectivos metodos:
         if(Interaccion.MenuInicio()){  // >> Verifica si es usuario o empresa (true si es usuario, false si es empresa)
-            
             if(Interaccion.usuario_empresa()){ inicioDeSesion(true); }
              else{ inicioDeSesion(false); }
         }
@@ -38,7 +37,7 @@ public class Controlador {
             Almacen.revisarEmpresas();
             if(Almacen.verificarDatosEmpresa(Interaccion.nombreUsuario(false), Interaccion.claveUsuario())){
                 Interaccion.InicioSesionCorrecto(Almacen.getEmpresaEncontrada()[0], Almacen.getEmpresaEncontrada()[2], false);
-                // AQUI comienza el proceso de empresa
+                // Inicio del proceso de empresa. 
                 Empresa InstanciaEmpresa = new Empresa(Almacen.getEmpresaEncontrada()[0],Almacen.getEmpresaEncontrada()[2]);
                 //InstanciaEmpresa.revisarCorreosEntidad();
                 // Sesion Iniciada:
@@ -64,9 +63,6 @@ public class Controlador {
                 }else if(opcion == 2){
                     Interaccion.nuevoCorreo(usuarioIniciado);
                 }
-                else if (opcion == 3){
-                    Almacen.printInfoEmpresas();
-                }
             }
 
 
@@ -85,9 +81,6 @@ public class Controlador {
                 }else if(opcion == 2){
                     Interaccion.nuevoCorreo(empresaIniciada);
                 }
-                else if (opcion == 3){
-                    Almacen.printInfoUsuarios();//info usuarios existentes
-                }
             }
 
             
@@ -99,7 +92,7 @@ public class Controlador {
 
     private static void registroUsuario() {
         String[] datosNuevaEntidad;
-        // Se comienza la creacion de una entidad, necesitamos saber si son usuarios o empresas:
+        // Se inicia la creacion de una entidad, necesitamos saber si son usuarios o empresas:
         if(Interaccion.CrearEntidad()){
             // creacion de usuario:
             datosNuevaEntidad = Interaccion.NuevaCreacionNombre(true);
@@ -130,10 +123,5 @@ public class Controlador {
                 InicioPrograma();
             }
         }
-        
-        
-
-
     }
-
 }
