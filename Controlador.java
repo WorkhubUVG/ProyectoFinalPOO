@@ -68,8 +68,6 @@ public class Controlador {
                     Almacen.printInfoEmpresas();
                 }
             }
-
-
         }
         else if(tipoDeEntidad.getClass().getName().equals("Empresa")){
             // Este sera el controlador para la sesion iniciada de tipo Empresa
