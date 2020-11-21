@@ -36,7 +36,7 @@ public abstract class Entidad{ //creando la clase madre entidad
         else{ return false; }
     }
 }
-// >> creando la clase heredada de entidad, que sera para los usuarios
+// >> creando la clase heredada de entidad, la cual sera para los usuarios
 class Usuario extends Entidad { 
     public Usuario(String nombre, String correo){
         this.Nombre = nombre;
@@ -44,7 +44,7 @@ class Usuario extends Entidad {
     }
 }
 
-class Empresa extends Entidad { //creando la clase heredada de entidad, que sera para las empresas
+class Empresa extends Entidad { //creando la clase heredada de entidad, la cual sera para las empresas
 
     public Empresa(String nombre, String correo){
         this.Nombre = nombre;
